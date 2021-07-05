@@ -4,7 +4,7 @@ Dojo is a suite of software tools that allows domain experts to register their m
 
 ### Contents
 
-1. Model Registration (TBD)
+1. Model Registration (coming soon!)
 2. [Data Registration](./data-registration.html)
 
 ### Model Registration Overview
