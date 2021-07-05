@@ -63,8 +63,10 @@ However, latitude and longitude are not typically contained in the same column. 
 
 ### Qualifiers
 
+Many datasets contain features that _qualify_ other features. For example, in a conflict/event dataset such as ACLED, you may have a category for the type of event. The primary feature associated with the event may be number of fatalities, while the category "qualifies" the number of fatalities.
 
+![Qualifiers](imgs/qualifiers.png)
 
+To set `Event Type` as a _qualifier_ for `fatalities` the user should check the box indicating that `this field qualifies another`. The user should then select the relevant columns that the current feature qualifies.
 
-
-
+> Note: you should only _qualify_ other features, not `Geo` or `Date` information since those are inherently dataset qualifiers. This avoids "qualifying a qualifier."
