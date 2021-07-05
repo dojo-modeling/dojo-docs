@@ -10,6 +10,7 @@
     - [Build a date](#build-a-date)
     - [Coordinate pairs](#coordinate-pairs)
     - [Qualifiers](#qualifiers)
+5. [Transforming the dataset](#transforming-the-dataset)
 
 ### Getting started
 
