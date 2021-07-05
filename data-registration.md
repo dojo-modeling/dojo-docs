@@ -21,7 +21,7 @@ The data registration workflow currently support registering 4 data types:
 * NetCDF
 * GeoTIFF
 
-You may begin by navigating to [data.dojo-test.com](data.dojo-test.com). From there you will be asked for basic metadata about your dataset.
+You may begin by navigating to [data.dojo-test.com](https://data.dojo-test.com). Please reach out to [dojo@jataware.com](mailto:dojo@jataware.com) for credentials or help with the application. From there you will be asked for basic metadata about your dataset.
 
 > Please provide as much information as possible throughout the data registration process to ensure that sufficient information is available to end-users of your dataset.
 
