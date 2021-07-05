@@ -11,6 +11,6 @@ The model registration workflow is designed to provide domain modelers with a fr
 
 ### Data Registration Overview
 
-The data registration workflow is designed to allow analysts, modelers and other users to _bring your own data_ ("BYOD"). These datasets are transformed into _indicators_ which can be used by top-down modeling engines. Typical examples of data that might be registered are indicators from the World Bank, FAO, or ACLED, however users can bring anything they think will be useful for modeling so long as it is either a CSV, Excel file, GeoTIFF or NetCDF. 
+The data registration workflow is designed to allow analysts, modelers and other users to _bring your own data_ ("BYOD"). These datasets are transformed into _indicators_ which can be used by top-down modeling engines. Typical examples of data that might be registered are indicators from the [World Bank](https://data.worldbank.org/), [FAO](http://www.fao.org/statistics/en/), or [ACLED](https://acleddata.com/), however users can bring anything they think will be useful for modeling so long as it is either a CSV, Excel file, GeoTIFF or NetCDF. 
 
 The goal of this process is to capture metadata about the dataset's provenance as well as each of its features and to transform it into a ready-to-use and well understood format. You can learn more about the data registration process [here](./data-registration.html).
