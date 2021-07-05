@@ -35,4 +35,5 @@ Click the **Annotate** button at the top of each column to annotate it.
 
 You will be asked for a `display name` and `description` for your dataset. Additionally you will be asked whether this column is either `Date`, `Date`, or a `Feature`.
 
+![Pre-Annotation](imgs/year.png)
 
