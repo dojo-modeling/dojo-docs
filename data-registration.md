@@ -44,6 +44,8 @@ Click the **Annotate** button at the top of each column to annotate it.
 
 > Note: you should only annotate columns that you wish to retain in the final, transformed dataset.
 
+Once you've annotated a column it will be highlighted in <span style="color:green">**green**</span>.
+
 ![Pre-Annotation](imgs/pre-annotate.png)
 
 You will be asked for a `display name` and `description` for your dataset. Additionally you will be asked whether this column is either `Date`, `Geo`, or a `Feature`. 
@@ -56,7 +58,9 @@ In the below example, the user annotates the "Year" column.
 
 ![Pre-Annotation](imgs/year.png)
 
-Note how the sample table at the left of the page is highlighted **green**? That is because we have automatically detected a valid date format of `%Y` for this column. Date formats are defined using the [strftime](https://strftime.org/) reference. Please refer to it for questions about how to correct or update the date format for a column. Generally, our column analysis process can correctly assign a date format, but periodically the user must update or correct this with an appropriate formatter. For example `2020-02-01` would have the date format `%Y-%m-%d` but `Februrary 1, 2020` would be `%B %-d, %Y`.
+Note how the sample table at the left of the page is highlighted <span style="color:green">**green**</span>? That is because we have automatically detected a valid date format of `%Y` for this column. Date formats are defined using the [strftime](https://strftime.org/) reference. Please refer to it for questions about how to correct or update the date format for a column. Generally, our column analysis process can correctly assign a date format, but periodically the user must update or correct this with an appropriate formatter. For example `2020-02-01` would have the date format `%Y-%m-%d` but `Februrary 1, 2020` would be `%B %-d, %Y`.
+
+If the date formatter is incorrect the column preview will turn <span style="color:red">**red**</span> until the user has corrected it.
 
 #### Build a date
 
