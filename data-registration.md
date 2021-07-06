@@ -29,6 +29,8 @@ You may begin by navigating to [data.dojo-test.com](https://data.dojo-test.com).
 
 When you initially upload a file you may be presented with a set of options depending upon the detected file type. 
 
+> To make this process as efficient as possible, we recommend removing any extraneous columns (if your data is in CSV or Excel file) before uploading it to Dojo.
+
 Excel files require that you select a worksheet. If your file is large, please wait until you see the detected worksheet names and select the appropriate one. If you proceed without selecting a worksheet name you will not be able to transform the dataset correctly.
 
 If your dataset is a GeoTIFF, you will be asked to provide the data band you wish to process and the name of the feature that resides in that band. You may optionally provide a date for the respective band.
@@ -98,5 +100,7 @@ We then transform the dataset into a ready-to-use format. This process may take 
 After the dataset has been transformed a preview will be shown in the ready-to-use format. If the dataset is large, a random sample of 100 rows is taken to allow the user to spot check accuracy. All `features` are "stacked" on top of each other. Qualifiers are added as additional columns to the right.
 
 ![Preview](imgs/preview.png)
+
+During this step, we attempt to automatically normalize all place names to the [GADM standard](https://gadm.org/). If your dataset contained columns for things like country, admin 1, ISO codes, etc we perform entity resolution behind-the-scenes to ensure that the place name spelling matches GADM. This ensures consistent place naming for downstream data consumers.
 
 If everything looks good the user can download this table if they wish. To save their work, the user **must `Submit to Dojo`**. Upon success the user can register another dataset or view the final metadata in Dojo.
