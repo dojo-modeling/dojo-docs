@@ -31,7 +31,7 @@ When you initially upload a file you may be presented with a set of options depe
 
 > To make this process as efficient as possible, we recommend removing any extraneous columns (if your data is in CSV or Excel file) before uploading it to Dojo.
 
-Excel files require that you select a worksheet. If your file is large, please wait until you see the detected worksheet names and select the appropriate one. If you proceed without selecting a worksheet name you will not be able to transform the dataset correctly.
+Excel files require that you select a worksheet. If your file is large, please wait until you see the detected worksheet names and select the appropriate one. 
 
 If your dataset is a GeoTIFF, you will be asked to provide the data band you wish to process and the name of the feature that resides in that band. You may optionally provide a date for the respective band.
 
