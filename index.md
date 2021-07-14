@@ -16,6 +16,6 @@ The data registration workflow is designed to allow analysts, modelers and other
 
 The goal of this process is to capture metadata about the dataset's provenance as well as each of its features and to transform it into a ready-to-use and well understood format. You can learn more about the data registration process [here](./data-registration.html).
 
-## CauseMos Compliant Format
+### CauseMos Compliant Format
 
 This section is intended to provide an overview of the CauseMos compliant format and to elaborate on various edge cases associated with data transformations. It is important to note that this format is a **target**: the goal of the Dojo data workflow is to enable an analyst or modeler to flexibly annotate their model output or indicator data and convert it into this target format.

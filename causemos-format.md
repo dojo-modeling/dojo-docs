@@ -1,8 +1,8 @@
-# Causemos Compliant Format
+## Causemos Compliant Format
 
 Dojo will convert model data into the causemos compliant format used by [Uncharted's](https://www.uncharted.software/) CauseMos tool.
 
-## Contents
+### Contents
 
 Data registration is discussed in the [data registration document](https://github.com/jataware/dojo-docs/blob/feature/causemos/data-registration.md). This document is meant to further describe the CauseMos compliant format and elaborate on some less common data registration scenarios.
 
@@ -11,7 +11,7 @@ Data registration is discussed in the [data registration document](https://githu
 3. [Non-standard calendars](#non-standard%20calendars)
 4. [Reserved column names](#reserved%20column%20names)
 
-## Overview
+### Overview
 
 The CauseMos compliant format is a tabular data representation that is stored as gzipped parquet. Data will have a fixed set of columns plus arbitrary `qualifier` columns:
 
@@ -30,7 +30,8 @@ Converting indicator datasets and model output is **THE GOAL** of the Dojo data 
 
 This example is available in [gzipped parquet here](https://jataware-world-modelers.s3.amazonaws.com/demos/causemos_example_format.parquet.gzip).
 
-## Multi-dates
+### Multi-dates
+
 In some instances a model may have date data that represents a range of dates for example:
 |    Date   | Country  | Crop Index |
 |-----------|----------|------------|
@@ -51,10 +52,10 @@ where one date would be marked as the `primary_date = True` and another would be
 By convention, CauseMos expects that date ranges are represented by the first date of that range. For example, a date point representing the entire month of May, 2020 could be presented as `5/1/2020`. Alternatively, Dojo provides a mechanism for the user to "build a date" where `month` and `year` are in separate columns and there is no `day` column.
 
 
-## Non-standard calendars
+### Non-standard calendars
 
 Causemos dates are standardized according to the [Gregorion calendar](https://en.wikipedia.org/wiki/Gregorian_calendar). An example of a non-standard calendar is the [Ethiopian calendar](https://en.wikipedia.org/wiki/Ethiopian_calendar). Dates in a non-standard calendar should be converted to Gregorion datetime.
 
 
-## Reserved column names
+### Reserved column names
 The Causemos format reserves the following column names: `timestamp`, `country`, `admin1`, `admin2`, `admin3`, `lat`, `lng`, `feature`, and `value`. If data is submitted with these column names and not used to represent that entity, then the submitted column name will be appended with the suffix `_non_primary`.
