@@ -8,8 +8,8 @@ Data registration is discussed in the [data registration document](https://githu
 
 1. [Overview](#overview)
 2. [Multi-dates](#multi-dates)
-3. [Non-standard calendars](#non-standard%20calendars)
-4. [Reserved column names](#reserved%20column%20names)
+3. [Non-standard calendars](#non-standard-calendars)
+4. [Reserved column names](#reserved-column-names)
 
 ### Overview
 
@@ -33,6 +33,7 @@ This example is available in [gzipped parquet here](https://jataware-world-model
 ### Multi-dates
 
 In some instances a model may have date data that represents a range of dates for example:
+
 |    Date   | Country  | Crop Index |
 |-----------|----------|------------|
 | 2015/2016 | Djibouti | 0.7        |
