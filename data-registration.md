@@ -104,22 +104,27 @@ If a dataset has geographies that correspond to `country`, `admin1`, `admin2`, a
 >If any of these are flagged as `primary_geo`, then the remaining geographies will be added as `features`.
 
 For example, if the dataset includes:
+
 | ADMIN0   | ADMIN1 | ADMIN2 |
 |----------|--------|--------|
 | Djibouti | Dikhi  | Yoboki |
 | Djibouti | Obock  | Obock  |
+
 and the following assignments are made:
+
 - ADMIN0 *Type*: `Geo` *Format*: `Country` *`This is my primary geo field`*
 - ADMIN1 *Type*: `Geo` *Format*: `State/Territory`
 - ADMIN2 *Type*: `Geo` *Format*: `Country/District`
 
 the *Preview* will display results similar to:
+
 | country  | admin1 |  admin2 | feature | value  |
 |----------|--------|---------|---------|--------|
 | Djibouti | NAN    | NAN     | ADMIN2  | Yoboki |
 | Djibouti | NAN    | NAN     | ADMIN1  | Obock  |
 
 if instead the following assignments are made where no field is marked `primary_geo`:
+
 - ADMIN0 *Type*: `Geo` *Format*: `Country`
 - ADMIN1 *Type*: `Geo` *Format*: `State/Territory`
 - ADMIN2 *Type*: `Geo` *Format*: `Country/District`
