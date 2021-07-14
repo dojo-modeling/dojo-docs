@@ -130,6 +130,7 @@ if instead the following assignments are made where no field is marked `primary_
 - ADMIN2 *Type*: `Geo` *Format*: `Country/District`
 
 the *Preview* will display results similar to:
+
 | country  | admin1 |  admin2 |
 |----------|--------|---------|
 | Djibouti | Dikhi  | Yoboki  |
