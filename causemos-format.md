@@ -7,7 +7,7 @@ Dojo will convert model data into the causemos compliant format used by [Unchart
 Data registration is discussed in the [data registration document](https://github.com/jataware/dojo-docs/blob/feature/causemos/data-registration.md). This document is meant to further describe the CauseMos compliant format and elaborate on some less common data registration scenarios.
 
 1. [Overview](#overview)
-2. [Multi-dates](#multi-dates)
+2. [Date ranges](#date-ranges)
 3. [Non-standard calendars](#non-standard-calendars)
 4. [Reserved column names](#reserved-column-names)
 
@@ -30,7 +30,7 @@ Converting indicator datasets and model output is **THE GOAL** of the Dojo data 
 
 This example is available in [gzipped parquet here](https://jataware-world-modelers.s3.amazonaws.com/demos/causemos_example_format.parquet.gzip).
 
-### Multi-dates
+### Date ranges
 
 In some instances a model may have date data that represents a range of dates for example:
 
