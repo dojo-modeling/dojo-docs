@@ -9,12 +9,13 @@
     - [Date formatting](#date-formatting)
     - [Build a date](#build-a-date)
     - [Coordinate pairs](#coordinate-pairs)
+    - [Multi-part geographies](#multi-part-geographies)
     - [Qualifiers](#qualifiers)
 5. [Transforming the dataset](#transforming-the-dataset)
 
 ### Getting started
 
-The data registration workflow currently support registering 4 data types: 
+The data registration workflow currently support registering 4 data types:
 
 * CSV
 * Excel
@@ -27,7 +28,7 @@ You may begin by navigating to [data.dojo-test.com](https://data.dojo-test.com).
 
 ### Choosing your file
 
-When you initially upload a file you may be presented with a set of options depending upon the detected file type. 
+When you initially upload a file you may be presented with a set of options depending upon the detected file type.
 
 > To make this process as efficient as possible, we recommend removing any extraneous columns (if your data is in CSV or Excel file) before uploading it to Dojo.
 
@@ -58,7 +59,7 @@ Once you have uploaded your dataset, Dojo analyzes it to determine whether your 
 
 Next, you will be shown a sample of 100 rows of your dataset. Columns highlighted in <span style="color:blue">**blue**</span> represent those which had a detected time or location feature.
 
-Click the **Annotate** button at the top of each column to annotate it. 
+Click the **Annotate** button at the top of each column to annotate it.
 
 > Note: you should only annotate columns that you wish to retain in the final, transformed dataset.
 
@@ -66,13 +67,13 @@ Once you've annotated a column it will be highlighted in <span style="color:gree
 
 ![Pre-Annotation](imgs/pre-annotate.png)
 
-You will be asked for a `display name` and `description` for your dataset. Additionally you will be asked whether this column is either `Date`, `Geo`, or a `Feature`. 
+You will be asked for a `display name` and `description` for your dataset. Additionally you will be asked whether this column is either `Date`, `Geo`, or a `Feature`.
 
 In the case of `Date` and `Geo` columns, they may be set to `primary`. It is important to choose only one column to be the primary `Date` and one to be the primary `Geo`. In the case of a [build a date](#build-a-date) or [coordinate pairs](#coordinate-pairs) all relevant columns will be associated as `primary` if the user sets that "grouping" to be primary.
 
-#### Date formatting 
+#### Date formatting
 
-In the below example, the user annotates the "Year" column. 
+In the below example, the user annotates the "Year" column.
 
 ![Pre-Annotation](imgs/year.png)
 
@@ -82,7 +83,7 @@ If the date formatter is incorrect the column preview will turn <span style="col
 
 #### Build a date
 
-Some datasets have year, month and day split out into separate columns. In this case, the user may "build a date" by annotating any of the relevant fields and indicating that it is `part of a multi-column datetime object`. 
+Some datasets have year, month and day split out into separate columns. In this case, the user may "build a date" by annotating any of the relevant fields and indicating that it is `part of a multi-column datetime object`.
 
 ![Build a date](imgs/build-a-date.png)
 
@@ -95,6 +96,40 @@ Generally speaking, if a dataset has latitude and longitude in it we should anno
 However, latitude and longitude are not typically contained in the same column. So, we provide a mechanism for the user to associate a `latitude` with a `longitude` and vice versa. To do this, you indicate that the column `is part of a coordinate pair` and choose it's partner from the dropdown.
 
 ![Coordinate pair](imgs/coordinate-pair.png)
+
+#### Multi-part geographies
+
+If a dataset has geographies that correspond to `country`, `admin1`, `admin2`, and `admin3`, these should be added **without** flagging as `primary_geo`.
+
+>If any of these are flagged as `primary_geo`, then the remaining geographies will be added as `features`.
+
+For example, if the dataset includes:
+| ADMIN0   | ADMIN1 | ADMIN2 |
+|----------|--------|--------|
+| Djibouti | Dikhi  | Yoboki |
+| Djibouti | Obock  | Obock  |
+and the following assignments are made:
+- ADMIN0 *Type*: `Geo` *Format*: `Country` *`This is my primary geo field`*
+- ADMIN1 *Type*: `Geo` *Format*: `State/Territory`
+- ADMIN2 *Type*: `Geo` *Format*: `Country/District`
+
+the *Preview* will display results similar to:
+| country  | admin1 |  admin2 | feature | value  |
+|----------|--------|---------|---------|--------|
+| Djibouti | NAN    | NAN     | ADMIN2  | Yoboki |
+| Djibouti | NAN    | NAN     | ADMIN1  | Obock  |
+
+if instead the following assignments are made where no field is marked `primary_geo`:
+- ADMIN0 *Type*: `Geo` *Format*: `Country`
+- ADMIN1 *Type*: `Geo` *Format*: `State/Territory`
+- ADMIN2 *Type*: `Geo` *Format*: `Country/District`
+
+the *Preview* will display results similar to:
+| country  | admin1 |  admin2 |
+|----------|--------|---------|
+| Djibouti | Dikhi  | Yoboki  |
+| Djibouti | Obock  | Obock   |
+
 
 #### Qualifiers
 
