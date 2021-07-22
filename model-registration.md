@@ -176,9 +176,7 @@ Repeat the above process for every applicable parameter value in your configurat
 ### Directive Annotation
 On the right-hand side of the terminal there is a dialog box; some entries will be flagged with an option to `MARK AS MODEL DIRECTIVE`. Next to the appropriate model run command, select this flag to launch an annotation window. Annotating the directive allows you to expose and describe parameters to the end-user.  Below is a demonstration video with details about each field following the video.
 
-<div class="iframe-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CHRJgVVpZ00" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+> Note: video coming soon!
 
 The same process applies to directive annotations as applied to [configuration annotation](#configuration-file-annotation).
 
@@ -198,7 +196,7 @@ To launch the output file annotation tool, run (replace `<path_to_output_file.cs
 tag <path_to_output_file.csv>
 ```
 
-For a detailed description on how to do this, please go to [CauseMos Compliant Format](./causemos-format.md).
+For a detailed description on how to do this, please go to [Data Registration](./data-registration.md). Some of the form elements differ slightly from the data registration workflow, but the annotation process remains the same.
 
 
 ### Completing the Registration
