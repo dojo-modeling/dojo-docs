@@ -196,6 +196,8 @@ To launch the output file annotation tool, run (replace `<path_to_output_file.cs
 tag <path_to_output_file.csv>
 ```
 
+Below is a video demonstrating how to invoke the model output annotation interface:
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/V4Pl4tg6Boo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 For a detailed description on how to do this, please go to [Data Registration](./data-registration.md). Some of the form elements differ slightly from the data registration workflow, but the annotation process remains the same.
