@@ -1,3 +1,10 @@
+<style>
+  .iframe-container {
+		text-align:center;
+  		width:100%;
+  }
+</style>
+
 ## Data Registration
 
 ### Contents
@@ -26,6 +33,33 @@ You may begin by navigating to [data.dojo-test.com](https://data.dojo-test.com).
 
 > Please provide as much information as possible throughout the data registration process to ensure that sufficient information is available to end-users of your dataset.
 
+#### Documenting the Data
+
+The first page is a form that captures metadata about your data and you. Below is a demonstration video as well as descriptions for each field.
+
+#### `World Modeler's Data Registration Form`:
+
+This form captures metadata about your data. There is a demonstration video below, as well as definitions for each field:
+
+<div class="iframe-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kYQshQqlp8M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+Model Overview Form Field Definitions:
+
+- `Name`: Name of the Dataset
+- `Description`: Your description here is the forward-facing documentation about your data that the end-user will see. Include as much information as possible to explain your data. 
+- `Category`: Add any over-arching categories that your data can be classified as; separate each category with a comma.
+- `Resolution`: 
+  - Choose the applicable temporal resolution from the drop-down
+  - Enter the X and Y resolution of your spatial data
+- `Maintainer Information`:
+  - `Name`: The primary point of contact for the dataset.
+  - `Email`: The primary point of contact's e-mail address. If you have one, a group e-mail is also acceptable.
+  - `Organization`: The organization that created the dataset. 
+  - `Website`: This can be a link to your dataset's repository or another website that you may maintain that provides additional context about your data.
+  - `File`: See [Choosing your file](#choosing-your-file) below:
+
 ### Choosing your file
 
 When you initially upload a file you may be presented with a set of options depending upon the detected file type.
@@ -51,13 +85,18 @@ A dataset such as the above should be transformed by the user _beforehand_ so th
 
 If your dataset is a GeoTIFF, you will be asked to provide the data band you wish to process and the name of the feature that resides in that band. You may optionally provide a date for the respective band.
 
+Below is a demonstration video on how to upload an excel file with tabs:
+<div class="iframe-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vdn8HO-_mnk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ### Geo and time inference
 
 Once you have uploaded your dataset, Dojo analyzes it to determine whether your dataset contains place or time information such as `timestamps`, `latitude`, `longitude`, `ISO` country codes, etc. This analysis process may take a few seconds, but it will ultimately speed up your data annotation.
 
 ### Annotating your dataset
 
-Next, you will be shown a sample of 100 rows of your dataset. Columns highlighted in <span style="color:blue">**blue**</span> represent those which had a detected time or location feature.
+Next, you will be shown a sample of your dataset. Columns highlighted in <span style="color:blue">**blue**</span> represent those which had a detected time or location feature.
 
 Click the **Annotate** button at the top of each column to annotate it.
 
@@ -89,6 +128,11 @@ Some datasets have year, month and day split out into separate columns. In this 
 
 The user can then select the relevant year, month and day columns as well as ensure they have correct date formatters.
 
+Below is a demonstration video on how to annotate a Build-a-Date:
+<div class="iframe-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aUymMlfSVeg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 #### Coordinate pairs
 
 Generally speaking, if a dataset has latitude and longitude in it we should annotate this and ignore the other geospatial information (unless they are [qualifiers](#qualifiers)) as this is the most granular location information available and can be used to geocode the remainder of the dataset.
@@ -96,6 +140,11 @@ Generally speaking, if a dataset has latitude and longitude in it we should anno
 However, latitude and longitude are not typically contained in the same column. So, we provide a mechanism for the user to associate a `latitude` with a `longitude` and vice versa. To do this, you indicate that the column `is part of a coordinate pair` and choose it's partner from the dropdown.
 
 ![Coordinate pair](imgs/coordinate-pair.png)
+
+Below is a demonstration video on how to annotate a coordinate pair:
+<div class="iframe-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ENUs0mxDy8A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 #### Multi-part geographies
 
@@ -146,6 +195,12 @@ Many datasets contain features that _qualify_ other features. For example, in a 
 To set `Event Type` as a _qualifier_ for `fatalities` the user should check the box indicating that `this field qualifies another`. The user should then select the relevant columns that the current feature qualifies. One field may qualify many features; in this case select all relevant features that the field of interest qualifies.
 
 > Note: you should only _qualify_ other features, not `Geo` or `Date` information since those are inherently dataset qualifiers. This avoids "qualifying a qualifier."
+
+
+Below is a demonstration video on how to add a feature and a qualifier for that feature:
+<div class="iframe-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bHj8fWiLzG0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ### Transforming the dataset
 
