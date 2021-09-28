@@ -84,7 +84,14 @@ curl -X 'GET' \
   -H 'accept: application/json'
 ```
 
-When the model execution and Dojo post-processing has completed, `attributes.status` will be set to `SUCCESS` and `data_paths` will contain an array of URLs for downloading the Causemos compliant model output off S3.
+When the model execution and Dojo post-processing has completed, `attributes.status` will be set to `success` and `data_paths` will contain an array of URLs for downloading the Causemos compliant model output off S3. In this case, the `data_paths` are:
+
+```
+[
+    "https://jataware-world-modelers.s3.amazonaws.com/dmc_results_dev/example-run-8654912/example-run-8654912_5cf84e06-c1ce-4a9d-a2e6-ede687293a26_str.1.parquet.gzip",
+    "https://jataware-world-modelers.s3.amazonaws.com/dmc_results_dev/example-run-8654912/example-run-8654912_5cf84e06-c1ce-4a9d-a2e6-ede687293a26.1.parquet.gzip"
+]
+  ```
 
 
 ## Debugging Model Runs
@@ -96,3 +103,24 @@ curl -X 'GET' \
   'https://dojo-test.com/runs/example-run-8654912/logs' \
   -H 'accept: application/json'
 ```
+
+
+## Searching for Model Runs
+
+You can query for existing model runs with a `GET /runs` and by passing a query string (see [query string query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html) for reference). This query should be executed against the [run schema](https://github.com/uncharted-causemos/docs/blob/master/datacubes/model-run.schema.json). 
+
+For example, we can query for:
+
+* model_name: DSSAT For Kenya Maize
+* parameter value: 1.25 (to correspond with the above rainfall multiplier)
+* status: success
+
+with the following (URL encoded) query:
+
+```
+curl -X 'GET' \
+  'https://dojo-test.com/runs?query=%28model_name%3ADSSAT%20For%20Kenya%20Maize%29%20AND%20%28parameters.value%3A%201.25%29%20AND%20%28attributes.status%3A%20success%29' \
+  -H 'accept: application/json'
+```
+
+> Note: the raw query is `(model_name:DSSAT For Kenya Maize) AND (parameters.value: 1.25) AND (attributes.status: success)`, which is `%28model_name%3ADSSAT%20For%20Kenya%20Maize%29%20AND%20%28parameters.value%3A%201.25%29%20AND%20%28attributes.status%3A%20success%29` after URL encoding.
