@@ -4,6 +4,14 @@ This document outlines how to interact with the Dojo API to fetch models, execut
 
 > Note: all API calls described in this document require authentification. Please contact [dojo@jataware.com](mailto:dojo@jataware.com) for credentials.
 
+## Contents
+
+1. [Model Discover](#model-discovery)
+2. [Model Execution](#model-execution)
+3. [Retrieving Model Runs](#retrieving-model-runs)
+4. [Debugging Model Runs](#debugging-model-runs)
+5. [Searching for Model Runs](#searching-for-model-runs)
+
 ## Model Discovery
 
 You can search Dojo for models using the `GET /models`. For example, to find models related to `crops` you would send:
