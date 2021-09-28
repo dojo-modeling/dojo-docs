@@ -5,6 +5,7 @@ Dojo is a suite of software tools that allows domain experts to register their m
 1. [Model Registration](./model-registration.md)
 2. [Data Registration](./data-registration.md)
 3. [CauseMos Compliant Format](./causemos-format.md)
+4. [Dojo API](./dojo-api.md)
 
 ### Model Registration Overview
 
@@ -19,3 +20,7 @@ The goal of this process is to capture metadata about the dataset's provenance a
 ### CauseMos Compliant Format
 
 This section is intended to provide an overview of the CauseMos compliant format and to elaborate on various edge cases associated with data transformations. It is important to note that this format is a **target**: the goal of the Dojo data workflow is to enable an analyst or modeler to flexibly annotate their model output or indicator data and convert it into this target format.
+
+### Dojo API
+
+This section provides an overview of how to interact with the Dojo API for model discovery, model execution, fetching model runs, and debugging models.
