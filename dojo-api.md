@@ -11,6 +11,7 @@ This document outlines how to interact with the Dojo API to fetch models, execut
 3. [Retrieving Model Runs](#retrieving-model-runs)
 4. [Debugging Model Runs](#debugging-model-runs)
 5. [Searching for Model Runs](#searching-for-model-runs)
+6. [Working with Model Results](#working-with-model-results)
 
 ## Model Discovery
 
@@ -132,3 +133,30 @@ curl -X 'GET' \
 ```
 
 > Note: the raw query is `(model_name:DSSAT For Kenya Maize) AND (parameters.value: 1.25) AND (attributes.status: success)`, which is `%28model_name%3ADSSAT%20For%20Kenya%20Maize%29%20AND%20%28parameters.value%3A%201.25%29%20AND%20%28attributes.status%3A%20success%29` after URL encoding.
+
+## Working with Model Results
+
+Model results are stored in the [Causemos compliant format](./causemos-format.md). They can be interacted with conveniently using Python's Pandas library, or any other library used to process parquet. 
+
+For example:
+
+```
+import pandas as pd
+
+data_path = "https://jataware-world-modelers.s3.amazonaws.com/dmc_results_dev/example-run-8654912/example-run-8654912_5cf84e06-c1ce-4a9d-a2e6-ede687293a26.1.parquet.gzip"
+
+df = pd.read_parquet(data_path)
+
+print(df.head())
+```
+
+This will return:
+
+| timestamp     	| country 	| admin1  	| admin2          	| admin3   	| lat    	| lng    	| feature  	| value         	|
+|---------------	|---------	|---------	|-----------------	|----------	|--------	|--------	|----------	|---------------	|
+| 1546300800000 	| Kenya   	| Kericho 	| Bureti          	| Kisiara  	| -0.458 	| 35.125 	| HDAT_AVE 	| 1566259200000 	|
+| 1577836800000 	| Kenya   	| Kericho 	| Bureti          	| Kisiara  	| -0.458 	| 35.125 	| HDAT_AVE 	| 1599264000000 	|
+| 441763200000  	| Kenya   	| Nyamira 	| North Mugirango 	| Magwagwa 	| -0.458 	| 35.042 	| HDAT_AVE 	| 461462400000  	|
+| 473385600000  	| Kenya   	| Nyamira 	| North Mugirango 	| Magwagwa 	| -0.458 	| 35.042 	| HDAT_AVE 	| 495504000000  	|
+| 504921600000  	| Kenya   	| Nyamira 	| North Mugirango 	| Magwagwa 	| -0.458 	| 35.042 	| HDAT_AVE 	| 526608000000  	|
+| 536457600000  	| Kenya   	| Nyamira 	| North Mugirango 	| Magwagwa 	| -0.458 	| 35.042 	| HDAT_AVE 	| 557366400000  	|
