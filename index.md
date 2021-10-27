@@ -6,6 +6,7 @@ Dojo is a suite of software tools that allows domain experts to register their m
 2. [Data Registration](./data-registration.md)
 3. [CauseMos Compliant Format](./causemos-format.md)
 4. [Dojo API](./dojo-api.md)
+4. [Model Registration "Cheatsheet"](./cheatsheet.md)
 
 ### Model Registration Overview
 
