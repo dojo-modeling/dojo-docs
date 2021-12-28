@@ -19,19 +19,19 @@ You can search Dojo for models using the `GET /models`. For example, to find mod
 
 ```
 curl -X 'GET' \
-  'https://dojo-test.com/models?query=crops&size=10' \
+  'https://api.dojo-modeling.com/models?query=crops&size=10' \
   -H 'accept: application/json'
 ```
 
-This will return an array of model objects defined by the shared [Causemos/Dojo Model Schema](https://github.com/uncharted-causemos/docs/blob/master/datacubes/model.schema.json).
+This will return an array of model objects defined by the Dojo model schema.
 
-A key thing to note is that each model has as a set of [parameters](https://github.com/uncharted-causemos/docs/blob/master/datacubes/model.schema.json#L167-L316). Parameters are model specific and the model metadata will include default values for each parameter. Understanding a model's individual parameters is crucial for executing a model.
+A key thing to note is that each model has as a set of parameters. Parameters are model specific and the model metadata will include default values for each parameter. Understanding a model's individual parameters is crucial for executing a model.
 
 Additionally, you may retrieve models directly based on their `id`. For example, here we retrieve DSSAT based on its `id`:
 
 ```
 curl -X 'GET' \
-  'https://dojo-test.com/models/5cf84e06-c1ce-4a9d-a2e6-ede687293a26' \
+  'https://api.dojo-modeling.com/models/5cf84e06-c1ce-4a9d-a2e6-ede687293a26' \
   -H 'accept: application/json'
 ```
 
@@ -49,7 +49,7 @@ We would use the `POST /runs` endpoint and send to Dojo the following:
 
 ```
 curl -X 'POST' \
-  'https://dojo-test.com/runs' \
+  'https://api.dojo-modeling.com/runs' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -89,11 +89,11 @@ To retrieve a model run, you can simply make a `GET /runs` using the run `id`. F
 
 ```
 curl -X 'GET' \
-  'https://dojo-test.com/runs/example-run-8654912' \
+  'https://api.dojo-modeling.com/runs/example-run-8654912' \
   -H 'accept: application/json'
 ```
 
-When the model execution and Dojo post-processing has completed, `attributes.status` will be set to `success` and `data_paths` will contain an array of URLs for downloading the Causemos compliant model output off S3. In this case, the `data_paths` are:
+When the model execution and Dojo post-processing has completed, `attributes.status` will be set to `success` and `data_paths` will contain an array of URLs for downloading the model output off S3. In this case, the `data_paths` are:
 
 ```
 [
@@ -109,14 +109,14 @@ You can debug model runs by fetching the model execution logs with `GET /runs/{r
 
 ```
 curl -X 'GET' \
-  'https://dojo-test.com/runs/example-run-8654912/logs' \
+  'https://api.dojo-modeling.com/runs/example-run-8654912/logs' \
   -H 'accept: application/json'
 ```
 
 
 ## Searching for Model Runs
 
-You can query for existing model runs with a `GET /runs` and by passing a query string (see [query string query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html) for reference). This query should be executed against the [run schema](https://github.com/uncharted-causemos/docs/blob/master/datacubes/model-run.schema.json). 
+You can query for existing model runs with a `GET /runs` and by passing a query string (see [query string query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html) for reference).
 
 For example, we can query for:
 
@@ -128,7 +128,7 @@ with the following (URL encoded) query:
 
 ```
 curl -X 'GET' \
-  'https://dojo-test.com/runs?query=%28model_name%3ADSSAT%20For%20Kenya%20Maize%29%20AND%20%28parameters.value%3A%201.25%29%20AND%20%28attributes.status%3A%20success%29' \
+  'https://api.dojo-modeling.com/runs?query=%28model_name%3ADSSAT%20For%20Kenya%20Maize%29%20AND%20%28parameters.value%3A%201.25%29%20AND%20%28attributes.status%3A%20success%29' \
   -H 'accept: application/json'
 ```
 
@@ -136,7 +136,7 @@ curl -X 'GET' \
 
 ## Working with Model Results
 
-Model results are stored in the [Causemos compliant format](./causemos-format.md). They can be interacted with conveniently using Python's Pandas library, or any other library used to process parquet. 
+Model results are stored in the [Geotemporal format](./geotemporal-format.md). They can be interacted with conveniently using Python's Pandas library, or any other library used to process parquet. 
 
 For example:
 

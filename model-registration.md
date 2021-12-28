@@ -28,7 +28,7 @@ There are two broad sections while registering your model:
 
 *Some models have pre-built images and do not require a new model image to be published. See [Container Set Up](#container-set-up) for more information.
 
-You may begin by navigating to [https://phantom.dojo-test.com](https://phantom.dojo-test.com/). Please reach out to [dojo@jataware.com](mailto:dojo@jataware.com) for credentials or help with the application. Once you have accessed Dojo, on the opening` Welcome to Dojo` screen select `Go!` under `A Model` to begin registering your model:
+You may begin by navigating to [https://dojo-modeling.com](https://dojo-modeling.com/). Please reach out to [dojo@jataware.com](mailto:dojo@jataware.com) for credentials or help with the application. Once you have accessed Dojo, on the opening` Welcome to Dojo` screen select `Go!` under `A Model` to begin registering your model:
 
 ![Dojo](imgs/dojo_opener.png)
 
@@ -186,7 +186,7 @@ Repeat the annotation process for every applicable parameter value in your model
 
 
 ### Output File Annotation
-Once your model has run you will need to annotate your output file(s). This step provides the required metadata to geocode, associate and format columns, and convert your output to a Causemos-compliant dataset. 
+Once your model has run you will need to annotate your output file(s). This step provides the required metadata to geocode, associate and format columns, and convert your output to a Geotemporal dataset. 
 
 > Currently, Dojo supports `.csv`, `.nc` (NetCDF), and `.tiff` (GeoTIFF). The files must have these correct extensions. For example, a `.txt` file that is `,` delimited, though technically a "CSV", will not be handled correctly by Dojo.
 
@@ -204,7 +204,7 @@ For a detailed description on how to do this, please go to [Data Registration](.
 
 
 ### Completing the Registration
-When you have completed the above steps, you are ready to publish your model image to DockerHub. This image will be utilized downstream from the model registration process and allow end-users to change exposed parameters, run the updated model, and then inspect and conduct analyses with the results in the Causemos interface.
+When you have completed the above steps, you are ready to publish your model image to DockerHub. This image will be utilized downstream from the model registration process and allow end-users to change exposed parameters, run the updated model, and then inspect and conduct analyses with the results.
 
 As a recap, before publishing your image, you should have:
 
@@ -213,8 +213,8 @@ As a recap, before publishing your image, you should have:
 3. Iteratively tested your model and verified model behavior / results.
 4. For directive-type models: annotated all desired parameters on the command line; this includes both parameters you want to expose and parameters you wish to remain static but wish to provide additional explainability.
 5. For configuration-type models: annotated all desired parameters in the configuration file.
-6. Annotated the model output file(s) to define the metadata, geocode, and transform your output to a Causemos-compliant dataset.
-7. Defined the location / directory of your output file(s). This is required in order to mount your model output and complete the geocoding and causemosification transform of the results.
+6. Annotated the model output file(s) to define the metadata, geocode, and transform your output to a Geotemporal dataset.
+7. Defined the location / directory of your output file(s). This is required in order to mount your model output and complete the geocoding and geotemporal transform of the results.
 
 If you have done all the above, you are ready to publish your image. Select `END SESSION`; you will be asked if you want to publish the image. Select `yes` and monitor the publication progress. When complete, you can go to https://hub.docker.com/repository/docker/jataware/dojo-publish and look under the tags section to verify that your image was pushed to DockerHub. You may need to expand the tags section.
 

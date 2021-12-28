@@ -1,10 +1,10 @@
-## Causemos Compliant Format
+## Geotemporal Format
 
-Dojo will convert model data into the causemos compliant format used by [Uncharted's](https://www.uncharted.software/) CauseMos tool.
+Dojo will optionally convert model data into the Geotemporal format used in several applications.
 
 ### Contents
 
-Data registration is discussed in the [data registration document](https://github.com/jataware/dojo-docs/blob/feature/causemos/data-registration.md). This document is meant to further describe the CauseMos compliant format and elaborate on some less common data registration scenarios.
+This document is will further describe the Geotemporal format and elaborate on some less common data registration scenarios.
 
 1. [Overview](#overview)
 2. [Date ranges](#date-ranges)
@@ -13,7 +13,7 @@ Data registration is discussed in the [data registration document](https://githu
 
 ### Overview
 
-The CauseMos compliant format is a tabular data representation that is stored as gzipped parquet. Data will have a fixed set of columns plus arbitrary `qualifier` columns:
+The Geotemporal format is a tabular data representation that is stored as gzipped parquet. Data will have a fixed set of columns plus arbitrary `qualifier` columns:
 
 | timestamp  | country  | admin1 | admin2      | admin3 | lat      | lng      | feature  | value | qualifier_1 |
 |------------|----------|--------|-------------|--------|----------|----------|----------|-------|-------------|
@@ -28,7 +28,7 @@ The fixed columns are `[timestamp, country, admin1, admin2, admin3, lat, lng, fe
 
 Converting indicator datasets and model output is **THE GOAL** of the Dojo data pipeline. The above example is meant to illuminate in more detail the **target** format, but model output and indicator datasets are not expected to start in this format. 
 
-This example is available in [gzipped parquet here](https://jataware-world-modelers.s3.amazonaws.com/demos/causemos_example_format.parquet.gzip).
+This example is available in [gzipped parquet here](/data/geotemporal_example_format.parquet.gzip).
 
 ### Date ranges
 
@@ -40,7 +40,7 @@ In some instances a model may have date data that represents a range of dates fo
 | 2016/2017 | Djibouti | 0.8        |
 | 2017/2018 | Djibouti | 0.9        |
 
- where `2017/2018` represents start and end dates. Causemos format supports only a single date field with the column name `timestamp`, therefore a multi-date should be divided into separate columns. Using the above example, this would correspond to:
+ where `2017/2018` represents start and end dates. The Geotemporal format supports only a single date field with the column name `timestamp`, therefore a multi-date should be divided into separate columns. Using the above example, this would correspond to:
 
 | Start Date | End Date  | Country  | Crop Index |
 |------------|-----------|----------|------------|
@@ -48,15 +48,15 @@ In some instances a model may have date data that represents a range of dates fo
 |    2016    |    2017   | Djibouti | 0.8        |
 |    2017    |    2018   | Djibouti | 0.9        |
 
-where one date would be marked as the `primary_date = True` and another would become a `feature` or `qualifier` column, as described in the [data registration document](https://github.com/jataware/dojo-docs/blob/feature/causemos/data-registration.md).
+where one date would be marked as the `primary_date = True` and another would become a `feature` or `qualifier` column, as described in the [data registration document](./data-registration.md).
 
-By convention, CauseMos expects that date ranges are represented by the first date of that range. For example, a date point representing the entire month of May, 2020 could be presented as `5/1/2020`. Alternatively, Dojo provides a mechanism for the user to "build a date" where `month` and `year` are in separate columns and there is no `day` column.
+By convention, we expect that date ranges are represented by the first date of that range. For example, a date point representing the entire month of May, 2020 could be presented as `5/1/2020`. Alternatively, Dojo provides a mechanism for the user to "build a date" where `month` and `year` are in separate columns and there is no `day` column.
 
 
 ### Non-standard calendars
 
-Causemos dates are standardized according to the [Gregorion calendar](https://en.wikipedia.org/wiki/Gregorian_calendar). An example of a non-standard calendar is the [Ethiopian calendar](https://en.wikipedia.org/wiki/Ethiopian_calendar). Dates in a non-standard calendar should be converted to Gregorion datetime.
+Dates are standardized according to the [Gregorion calendar](https://en.wikipedia.org/wiki/Gregorian_calendar). An example of a non-standard calendar is the [Ethiopian calendar](https://en.wikipedia.org/wiki/Ethiopian_calendar). Dates in a non-standard calendar should be converted to Gregorion datetime.
 
 
 ### Reserved column names
-The Causemos format reserves the following column names: `timestamp`, `country`, `admin1`, `admin2`, `admin3`, `lat`, `lng`, `feature`, and `value`. If data is submitted with these column names and not used to represent that entity, then the submitted column name will be appended with the suffix `_non_primary`.
+The Geotemporal format reserves the following column names: `timestamp`, `country`, `admin1`, `admin2`, `admin3`, `lat`, `lng`, `feature`, and `value`. If data is submitted with these column names and not used to represent that entity, then the submitted column name will be appended with the suffix `_non_primary`.
