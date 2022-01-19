@@ -6,12 +6,14 @@ This document outlines how to interact with the Dojo API to fetch models, execut
 
 ## Contents
 
-1. [Model Discover](#model-discovery)
-2. [Model Execution](#model-execution)
-3. [Retrieving Model Runs](#retrieving-model-runs)
-4. [Debugging Model Runs](#debugging-model-runs)
-5. [Searching for Model Runs](#searching-for-model-runs)
-6. [Working with Model Results](#working-with-model-results)
+- [The Dojo API](#the-dojo-api)
+  - [Contents](#contents)
+  - [Model Discovery](#model-discovery)
+  - [Model Execution](#model-execution)
+  - [Retrieving Model Runs](#retrieving-model-runs)
+  - [Debugging Model Runs](#debugging-model-runs)
+  - [Searching for Model Runs](#searching-for-model-runs)
+  - [Working with Model Results](#working-with-model-results)
 
 ## Model Discovery
 
@@ -44,95 +46,58 @@ Let's say we wish to execute DSSAT with the following parameters:
 * Fertilizer amount addition: 25 kg[N]/ha
 * Rainfall multiplier: 1.25
 * Offset to planting date window: 30 days
+  
+We would use `runmodel` from the [dojo-cli](https://github.com/dojo-modeling/dojo-cli#runmodel)
 
-We would use the `POST /runs` endpoint and send to Dojo the following:
+`dojo runmodel --model="DSSAT" --params='{"fertilizer_amount_addition": 25, "rainfall_multiplier": 1.25, "offset_to_planting_date_window": 30}'`
 
-```
-curl -X 'POST' \
-  'https://api.dojo-modeling.com/runs' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '{
-   "id":"example-run-8654912",
-   "model_name": "DSSAT For Kenya Maize",
-   "model_id":"5cf84e06-c1ce-4a9d-a2e6-ede687293a26",
-   "created_at":0,
-   "data_paths": [],
-   "pre_gen_output_paths": [],
-   "is_default_run":false,
-   "tags": ["Agriculture"],
-   "parameters":[
-      {
-         "name":"fertilizer_amount_addition",
-         "value":25
-      },
-      {
-         "name":"rainfall_multiplier",
-         "value":1.25
-      },
-      {
-         "name":"offset_to_planting_date_window",
-         "value":30
-      }
-   ],
-   "attributes":{}
-}'
-```
-
-You have now created a run with the `id` `example-run-8654912`. 
-
-> Note: the only fields that should be adjusted in the above payload are `id` (the run `id`), `model_name`, `model_id`, `tags`, and `parameters`. The rest should remain as displayed above.
+You have now created a run with the `id` `???`. 
 
 ## Retrieving Model Runs
 
-To retrieve a model run, you can simply make a `GET /runs` using the run `id`. For example:
-
+To retrieve results. We use `results` from the [dojo-cli](https://github.com/dojo-modeling/dojo-cli#results)
 ```
-curl -X 'GET' \
-  'https://api.dojo-modeling.com/runs/example-run-8654912' \
-  -H 'accept: application/json'
+--id : id of the docker container
+--name : name of the docker container
+--config : name of configuation file; defaults to .config
 ```
-
-When the model execution and Dojo post-processing has completed, `attributes.status` will be set to `success` and `data_paths` will contain an array of URLs for downloading the model output off S3. In this case, the `data_paths` are:
-
+`dojo results --name="DSSAT"`
 ```
-[
-    "https://jataware-world-modelers.s3.amazonaws.com/dmc_results_dev/example-run-8654912/example-run-8654912_5cf84e06-c1ce-4a9d-a2e6-ede687293a26_str.1.parquet.gzip",
-    "https://jataware-world-modelers.s3.amazonaws.com/dmc_results_dev/example-run-8654912/example-run-8654912_5cf84e06-c1ce-4a9d-a2e6-ede687293a26.1.parquet.gzip"
-]
-  ```
+Run completed.
+Model output, run-parameters, and log files are located in "/mydojodata/runs/DSSAT/33cf1a60-2544-420f-ae08-b453a9751cfc/20211227140758".
+```
 
 
 ## Debugging Model Runs
 
-You can debug model runs by fetching the model execution logs with `GET /runs/{run_id}/logs`. For example:
-
-```
-curl -X 'GET' \
-  'https://api.dojo-modeling.com/runs/example-run-8654912/logs' \
-  -H 'accept: application/json'
-```
+You can debug model runs by fetching the model execution logs. After `runmodel` from the [dojo-cli](https://github.com/dojo-modeling/dojo-cli#runmodel) go to the log locations `/runs/{model-name}/{uuid}/logs.txt`
 
 
 ## Searching for Model Runs
 
-You can query for existing model runs with a `GET /runs` and by passing a query string (see [query string query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html) for reference).
+To retrieve results. We use `describe` from the [dojo-cli](https://github.com/dojo-modeling/dojo-cli#describe)
 
 For example, we can query for:
+* model_name: Population Model
 
-* model_name: DSSAT For Kenya Maize
-* parameter value: 1.25 (to correspond with the above rainfall multiplier)
-* status: success
-
-with the following (URL encoded) query:
+`dojo describe --model="Population Model"`
 
 ```
-curl -X 'GET' \
-  'https://api.dojo-modeling.com/runs?query=%28model_name%3ADSSAT%20For%20Kenya%20Maize%29%20AND%20%28parameters.value%3A%201.25%29%20AND%20%28attributes.status%3A%20success%29' \
-  -H 'accept: application/json'
+NAME
+----
+Population Model
+
+MODEL FAMILY
+------------
+Kimetrica
+
+DESCRIPTION
+-----------
+The population model serves as an ancillary tool to distribute, disaggregate yearly population projections onto a geospatial representation. Occasionally, the output of this model is required as an independent variable for downstream models.y
+...
 ```
 
-> Note: the raw query is `(model_name:DSSAT For Kenya Maize) AND (parameters.value: 1.25) AND (attributes.status: success)`, which is `%28model_name%3ADSSAT%20For%20Kenya%20Maize%29%20AND%20%28parameters.value%3A%201.25%29%20AND%20%28attributes.status%3A%20success%29` after URL encoding.
+
 
 ## Working with Model Results
 
