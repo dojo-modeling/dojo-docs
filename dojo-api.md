@@ -110,7 +110,7 @@ For example:
 ```
 import pandas as pd
 
-data_path = "https://jataware-world-modelers.s3.amazonaws.com/dmc_results_dev/example-run-8654912/example-run-8654912_5cf84e06-c1ce-4a9d-a2e6-ede687293a26.1.parquet.gzip"
+data_path = "./mydojodata/runs/DSSAT/33cf1a60-2544-420f-ae08-b453a9751cfc/20211227140758/example-run-8654912_5cf84e06-c1ce-4a9d-a2e6-ede687293a26.1.parquet.gzip"
 
 df = pd.read_parquet(data_path)
 
