@@ -58,11 +58,11 @@ To retrieve results. We use `results` from the [dojo-cli](https://github.com/doj
 
 ```
 --id : id of the docker container
---name : name of the docker container
+--name : name of the docker container (as returned by the runmodel command)
 --config : name of configuation file; defaults to .config
 ```
 
-`dojo results --name="DSSAT"`
+`dojo results --name=dojo-DSSAT20211227140758`
 
 ```
 Run completed.
@@ -77,7 +77,7 @@ After using `runmodel` from the [dojo-cli](https://github.com/dojo-modeling/dojo
 
 ## Searching for Model Runs
 
-To retrieve results. We use `describe` from the [dojo-cli](https://github.com/dojo-modeling/dojo-cli#describe)
+To print a description of the model, we use `describe` from the [dojo-cli](https://github.com/dojo-modeling/dojo-cli#describe)
 
 For example, we can query for:
 * model_name: Population Model
