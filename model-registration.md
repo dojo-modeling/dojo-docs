@@ -9,15 +9,21 @@
 
 ### Contents
 
-1. [Getting Started](#getting-started)
-2. [Documenting the Model](#documenting-the-model)
-3. [Model Geographic Coverage](#model-geographic-coverage)
-4. [Container Set Up](#container-set-up) 
-5. [Build your model](#build-your-model)
-5. [Configuration File Annotation](#configuration-file-annotation)
-6. [Directive Annotation](#directive-annotation)
-7. [Output File Annotation](#output-file-annotation)
-8. [Completing the Registration](#completing-the-registration)
+- [Model Registration](#model-registration)
+  - [Contents](#contents)
+- [Overview](#overview)
+- [Model Registration](#model-registration-1)
+  - [Documenting the Model](#documenting-the-model)
+    - [`Model Overview Form`:](#model-overview-form)
+    - [`Model Specifics Form`:](#model-specifics-form)
+  - [Model Geographic Coverage](#model-geographic-coverage)
+  - [Container Set Up](#container-set-up)
+  - [Build your model](#build-your-model)
+    - [Quick Command Reference:](#quick-command-reference)
+  - [Configuration File Annotation](#configuration-file-annotation)
+  - [Directive Annotation](#directive-annotation)
+  - [Output File Annotation](#output-file-annotation)
+  - [Completing the Registration](#completing-the-registration)
 
 
 ## Overview
@@ -40,11 +46,9 @@ The first two pages are forms that capture metadata about your model and you. It
 
 #### `Model Overview Form`:
 
-The Model Overview Form captures metadata about your model. There is a demonstration video below, as well as definitions for each field:
+The Model Overview Form captures metadata about your model. There is a screenshot below, as well as definitions for each field:
 
-<div class="iframe-container">
-<iframe width="560" height="315" display="block" margin="0 auto" src="https://www.youtube.com/embed/cLebr5_k9o8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+![Model Registration](imgs/model_registration.png)
 
 
 Model Overview Form Field Definitions:
@@ -56,11 +60,9 @@ Model Overview Form Field Definitions:
 
 #### `Model Specifics Form`:
 
-The Model Specifics Form captures general metadata about you and your model. There is a short demo video below, as well as definitions for each field:
+The Model Specifics Form captures general metadata about you and your model. There is a short demo below, as well as definitions for each field:
 
-<div class="iframe-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XIS6tmOqB_A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+![Model Specifics](imgs/model_specifics.png)
 
 Model Specifics Form Field Definitions:
 
@@ -81,15 +83,15 @@ Model Geographic Coverage allows you to define the geographic areas that your mo
 
 Steps to add a geographic coverage by administration levels: 
 
+![Add Region by Name](imgs/add_region-name.png)
+
 1. Click on `ADD REGIONS BY NAME`
 2. In the search box, enter a place name, country, or any admin-level 1 through 3.
 3. Select your desired region from the dropdown menu.
 4. Your selection will appear in the search box: **click on `ADD REGION`** to add it to the `Selected Regions`.
 5. Repeat the process to add any other geographic areas.
 
-<div class="iframe-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/txh01IYrsFY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+![Add Region by Bounding Box](imgs/add_region-coordbox.png)
 
 Steps to add a geographic coverage by building a bounding box:
 
@@ -103,11 +105,6 @@ Steps to add a geographic coverage by building a bounding box:
   
 3. Select `ADD REGION TO MAP`
 
-
-<div class="iframe-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pbhAhhW6Qgw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
 Once you have added your geographic areas, Click `SUBMIT MODEL` to move the next step in the registration process.
 
 ### Container Set Up
@@ -116,11 +113,9 @@ To launch the model execution environment, you will need to select a base image.
 
 Your model may have a pre-built image available; to check, click on `Ubuntu`, look through the drop down menu, and select your bespoke image. If you do not have an image here, choose `Ubuntu`.
 
-After selecting the appropriate image, select an Available Worker. An Available Worker will both indicate it is `Available` and have no connections or containers. Click `LAUNCH` to move into the model execution environment.
+After selecting the appropriate image, select (click) an Available Worker. An Available Worker will both indicate it is `Available` and have no connections or containers. Click `LAUNCH` to move into the model execution environment.
 
-<div class="iframe-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CHRJgVVpZ00" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+![Select Worker](imgs/select-worker.png)
 
 ### Build your model
 
@@ -129,7 +124,7 @@ You will build your image in the model execution environment (a Docker container
 - Clone your model code into the container.
 - Install any requirements needed to run your model.
 - Test model execution. This can be an iterative approach in that you can make several test runs to ensure that you model is running and producing the expected results.
-- Once you have a successful model run, Dojo will need to learn how you run your model, what input parameters you want to expose to the end-user, metadata about your output file(s), and the directory where your results are located. [Quick Reference](#quick-command-reference) is a short introduction to the commands you will need followed by more in depth discussions and demonstration videos of each command.
+- Once you have a successful model run, Dojo will need to learn how you run your model, what input parameters you want to expose to the end-user, metadata about your output file(s), and the directory where your results are located. [Quick Reference](#quick-command-reference) is a short introduction to the commands you will need followed by more in depth discussions and demonstrations of each command.
 
 
 #### Quick Command Reference:
@@ -144,13 +139,12 @@ If your model has configuration files with parameters or tunable knobs you wish 
 
 With Dojo, you can annotate any plain text/ascii configuration file, including `.txt`, `.yaml`, `.json`, `.xml`, etc. 
 
-Below is a demonstration video with details about each field following the video.
+Below is an example with details about each field following.
 
-<div class="iframe-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wAcZ3k3v3us" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+![Edit Config](imgs/edit_config.png)
 
 To launch the config annotation window run (replace `<path_to_config_file.json>` with the appropriate file path and name):
+
 
   ```
   config <path_to_config_file.json>
@@ -174,9 +168,9 @@ Repeat the above process for every applicable parameter value in your configurat
 > Note: upon model execution, Dojo accepts parameter selections from end users and "rehydrates" the relevant config files with those parameter selections.
 
 ### Directive Annotation
-On the right-hand side of the terminal there is a dialog box; some entries will be flagged with an option to `MARK AS MODEL DIRECTIVE`. Next to the appropriate model run command, select this flag to launch an annotation window. Annotating the directive allows you to expose and describe parameters to the end-user.  Below is a demonstration video with details about each field following the video.
+On the right-hand side of the terminal there is a dialog box; some entries will be flagged with an option to `MARK AS MODEL DIRECTIVE`. Next to the appropriate model run command, select this flag to launch an annotation window. Annotating the directive allows you to expose and describe parameters to the end-user.  Below is an example with details about each field following.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8ybQheDMq4g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![hi](imgs/edit_run_command.png)
 
 The same process applies to directive annotations as applied to [configuration annotation](#configuration-file-annotation).
 
@@ -196,9 +190,9 @@ To launch the output file annotation tool, run (replace `<path_to_output_file.cs
 tag <path_to_output_file.csv>
 ```
 
-Below is a video demonstrating how to invoke the model output annotation interface:
+Below is a demonstration how to invoke the model output annotation interface:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/V4Pl4tg6Boo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![hi](imgs/tag-data.png)
 
 For a detailed description on how to do this, please go to [Data Registration](./data-registration.md). Some of the form elements differ slightly from the data registration workflow, but the annotation process remains the same.
 
@@ -223,7 +217,3 @@ If you have done all the above, you are ready to publish your image. Select `END
 
 **IMPORTANT**
 If for some reason you do not wish to publish a container image, you must select `ABANDON SESSION`. As you noticed when launching into the model execution environment, there are a limited number of workers available. If you do not abandon your session, the container will continue to run and your worker will not be available to others wishing to register a model.
-
-<div class="iframe-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fsQGoCM1ihM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>

@@ -39,15 +39,15 @@ curl -X 'GET' \
 
 ## Model Execution
 
-To execute a model, you must first obtain the model's metadata to appropriately set the model's parameters. Any parameter not explicitly set will fall back to its default setting which was specified at the time of model registration.
+To execute a model, We use `runmodel` from the [dojo-cli](https://github.com/dojo-modeling/dojo-cli#runmodel). 
+
+First, you must obtain the model's metadata to appropriately set the model's parameters. Any parameter not explicitly set will fall back to its default setting which was specified at the time of model registration.
 
 Let's say we wish to execute DSSAT with the following parameters:
 
 * Fertilizer amount addition: 25 kg[N]/ha
 * Rainfall multiplier: 1.25
 * Offset to planting date window: 30 days
-  
-We would use `runmodel` from the [dojo-cli](https://github.com/dojo-modeling/dojo-cli#runmodel)
 
 `dojo runmodel --model="DSSAT" --params='{"fertilizer_amount_addition": 25, "rainfall_multiplier": 1.25, "offset_to_planting_date_window": 30}'`
 
@@ -56,12 +56,15 @@ You have now created a run with the `id` `???`.
 ## Retrieving Model Runs
 
 To retrieve results. We use `results` from the [dojo-cli](https://github.com/dojo-modeling/dojo-cli#results)
+
 ```
 --id : id of the docker container
 --name : name of the docker container
 --config : name of configuation file; defaults to .config
 ```
+
 `dojo results --name="DSSAT"`
+
 ```
 Run completed.
 Model output, run-parameters, and log files are located in "/mydojodata/runs/DSSAT/33cf1a60-2544-420f-ae08-b453a9751cfc/20211227140758".
@@ -70,7 +73,7 @@ Model output, run-parameters, and log files are located in "/mydojodata/runs/DSS
 
 ## Debugging Model Runs
 
-You can debug model runs by fetching the model execution logs. After `runmodel` from the [dojo-cli](https://github.com/dojo-modeling/dojo-cli#runmodel) go to the log locations `/runs/{model-name}/{uuid}/logs.txt`
+After using `runmodel` from the [dojo-cli](https://github.com/dojo-modeling/dojo-cli#runmodel), you can debug model runs by fetching the model execution logs. go to the log locations `/runs/{model-name}/{uuid}/logs.txt`
 
 
 ## Searching for Model Runs
