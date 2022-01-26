@@ -2,7 +2,6 @@
 
 This document outlines how to interact with the Dojo API to fetch models, execute models, and fetch model runs.
 
-> Note: all API calls described in this document require authentification. Please contact [dojo@jataware.com](mailto:dojo@jataware.com) for credentials.
 
 ## Contents
 
