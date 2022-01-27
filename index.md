@@ -30,7 +30,7 @@ Normalizing model outputs to this consistent Geotemporal format facilitates rapi
 
 <p align="center">
     <img src="imgs/causemos_viz.png" width="400" title="Causemos Modeling Platform"/> 
-    </br>
+    <br/>
     <i>Uncharted's Causemos Platform</i>
 </p>
 
