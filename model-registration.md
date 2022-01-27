@@ -9,17 +9,11 @@
 
 ### Contents
 
-- [Model Registration](#model-registration)
-  - [Contents](#contents)
 - [Overview](#overview)
-- [Model Registration](#model-registration-1)
-  - [Documenting the Model](#documenting-the-model)
-    - [`Model Overview Form`:](#model-overview-form)
-    - [`Model Specifics Form`:](#model-specifics-form)
-  - [Model Geographic Coverage](#model-geographic-coverage)
-  - [Container Set Up](#container-set-up)
+- [Model Metadata and Provenance](#model-metadata-and-provenance)
+- [Containerization and Execution](#containerization-and-execution)
   - [Build your model](#build-your-model)
-    - [Quick Command Reference:](#quick-command-reference)
+  - [Dojo Commands:](#dojo-commands)
   - [Configuration File Annotation](#configuration-file-annotation)
   - [Directive Annotation](#directive-annotation)
   - [Output File Annotation](#output-file-annotation)
@@ -27,44 +21,32 @@
 
 
 ## Overview
-There are two broad sections while registering your model:
+There are two main activities associated with registering a model to Dojo:
 
-1. `Model Description`: You will start the registration process by filling out two forms and choosing any relevant geographic regions so Dojo can capture and store metadata about your model.
-2. `Model Container Build`: Once the forms are completed and geographies selected, you will be directed to the model execution environment. In this environment, you will teach Dojo how to run your model, what parameters you would like to expose, your model's output location, and metadata about your output file. The final step in the model registration process will be to publish your model's image*.
+1. **Model Metadata and Provenance**: modelers begin the registration process by providing key metadata about their model and choosing relevant geographic regions so that Dojo can facilitate search and discovery across its model registry.
 
-*Some models have pre-built images and do not require a new model image to be published. See [Container Set Up](#container-set-up) for more information.
+2. **Containerization and Execution**: next, modelers are directed to a containerization environment. In this environment, modelers teach Dojo how to run their models, how to set parameters, and provide metadata about model output files. The end result is the publication of a Docker image and associated metadata about the registered model.
 
-You may begin by navigating to [https://dojo-modeling.com](https://dojo-modeling.com/). Please reach out to [dojo@jataware.com](mailto:dojo@jataware.com) for credentials or help with the application. Once you have accessed Dojo, on the opening` Welcome to Dojo` screen select `Go!` under `A Model` to begin registering your model:
+To get started, visit [https://dojo-modeling.com](https://dojo-modeling.com/). Please reach out to [dojo@jataware.com](mailto:dojo@jataware.com) for credentials or help with the application. 
 
-![Dojo](imgs/dojo_opener.png)
+## Model Metadata and Provenance
 
-## Model Registration
-
-### Documenting the Model
-
-The first two pages are forms that capture metadata about your model and you. It's important to be as thorough as possible to ensure the end-user can understand at a high-level what your model does, how it does it, and what it produces.
-
-#### `Model Overview Form`:
-
-The Model Overview Form captures metadata about your model. There is a screenshot below, as well as definitions for each field:
+To begin the process, Dojo captures metadata about each model and its maintainer. It's important to be as thorough as possible to ensure the end-user can understand at a high-level what each model does, how it does it, and what it produces.
 
 ![Model Registration](imgs/model_registration.png)
 
-
-Model Overview Form Field Definitions:
+Key definitions:
 
 - `Model Name`: The end-user will see this name when running your model. While spaces and upper/lower case are allowed, _**do not use special characters, to include parenthesis**_.
 - `Model Website`: This can be a link to your model repository or another website that you may maintain that provides additional context about your model.
 - `Model Family`: Model family refers to a group of models with similar characteristics. If you have several procedures based on the same underlying model family, you can link those models or model procedures here under a common family name of your choosing, such as `LPJmL`. If your model does not have a natural grouping with other models, you can name it under an appropriate category related to your model or repeat your model name.
 - `Model Description`: Your description here is the forward-facing documentation about your model that the end-user will see. Include as much information as possible to explain what your model does and what it produces. Include any notes that may be required to explain any model idiosyncrasies. If your model takes a long time to run, you may want to include an estimated run time.
 
-#### `Model Specifics Form`:
-
-The Model Specifics Form captures general metadata about you and your model. There is a short demo below, as well as definitions for each field:
+The next page captures general metadata about the model and its maintainer. There is a short demo below, as well as definitions for each field:
 
 ![Model Specifics](imgs/model_specifics.png)
 
-Model Specifics Form Field Definitions:
+Key definitions:
 
 - `Maintainer Name`: The primary point of contact for the model.
 - `Maintainer Email`: The primary point of contact's e-mail address. If you have one, a group e-mail is also acceptable.
@@ -74,12 +56,7 @@ Model Specifics Form Field Definitions:
 
   > Note: Spaces are not allowed when entering your category. To include a multi-word category, replace spaces with underscores. For example, `crop production` would be entered as `crop_production`. 
 
-
-There may be an option at the bottom of the screen asking `Would you like to reconnect to an existing model?` If you are returning to Dojo and would like to continue working in your pre-existing container (with all of your previous work), select your active model container to be re-directed to the model execution environment.
-
-### Model Geographic Coverage
-
-Model Geographic Coverage allows you to define the geographic areas that your model can be run over. You can add geographic areas by either selecting your area by name or building a bounding box around your area of interest.
+Next, modelers provide information about the model's geographic coverage. Modelers can add geographic areas by either selecting an area area by name or building a bounding box around an area of interest.
 
 Steps to add a geographic coverage by administration levels: 
 
@@ -107,19 +84,17 @@ Steps to add a geographic coverage by building a bounding box:
 
 Once you have added your geographic areas, Click `SUBMIT MODEL` to move the next step in the registration process.
 
-### Container Set Up
+## Containerization and Execution
 
-To launch the model execution environment, you will need to select a base image. 
+To launch the model execution environment, you will need to select a base image from the available drop-down menu. You may also provide the ID of an existing Debian (Ubuntu) based Docker image on Dockerhub to use as your starting point.
 
-Your model may have a pre-built image available; to check, click on `Ubuntu`, look through the drop down menu, and select your bespoke image. If you do not have an image here, choose `Ubuntu`.
-
-After selecting the appropriate image, select (click) an Available Worker. An Available Worker will both indicate it is `Available` and have no connections or containers. Click `LAUNCH` to move into the model execution environment.
+After selecting the appropriate image you should launch your registration worker.
 
 ![Select Worker](imgs/select-worker.png)
 
-### Build your model
+### Building your model
 
-You will build your image in the model execution environment (a Docker container). While all models are different, the general approach is to:
+You will build your model image inside the model execution environment (a Docker container). While all models are different, the general approach is to:
 
 - Clone your model code into the container.
 - Install any requirements needed to run your model.
@@ -127,15 +102,16 @@ You will build your image in the model execution environment (a Docker container
 - Once you have a successful model run, Dojo will need to learn how you run your model, what input parameters you want to expose to the end-user, metadata about your output file(s), and the directory where your results are located. [Quick Reference](#quick-command-reference) is a short introduction to the commands you will need followed by more in depth discussions and demonstrations of each command.
 
 
-#### Quick Command Reference:
+### Dojo Commands:
 You can leverage the commands below while registering your model:
 
 - `edit <filename.ext>`: launch editor to modify any of your files.
 - `config <path_to_config_file.json>`: launch a tool to define and annotate parameters.
 - `tag <path_to_outputfile.csv>`: launch an annotation tool to define and classify the columns of your data.
+- `accessory <path_to_accessory.png> "caption here"`: tags an output accessory file such as an image or video; caption is optional
 
 ### Configuration File Annotation
-If your model has configuration files with parameters or tunable knobs you wish to expose to users, you will need to annotate them in order to expose parameters to the end-user. Once the annotation window is launched, you can annotate each parameter and provide metadata and detailed information. 
+If your model uses configuration files to set parameters or tunable knobs you will need to annotate them in order to expose these parameters to Dojo end-user. Once the annotation window is launched, you can annotate each parameter and provide metadata and detailed information. 
 
 With Dojo, you can annotate any plain text/ascii configuration file, including `.txt`, `.yaml`, `.json`, `.xml`, etc. 
 
@@ -163,7 +139,7 @@ To launch the config annotation window run (replace `<path_to_config_file.json>`
  - `Allow users to change this value`: A checkbox option. If you would like to expose this parameter to the end-user, keep the box checked. If you only want to provide additional information about the parameter to enhance explainability, uncheck the box. The end-user will then not be able to change the value but will be able to view the details of the parameter.
  - `Save`: Select save when complete. You can also select cancel should you no longer want to annotate the parameter and your updates will not be saved.
 
-Repeat the above process for every applicable parameter value in your configuration file. Once complete, select save in the upper right-hand corner; this will save your annotated configuration file in Dojo.
+Repeat the above process for every applicable parameter value in your configuration file. Once complete, select save in the upper right-hand corner; this will save your annotated configuration file in Dojo. You may annotate multiple configuration files.
 
 > Note: upon model execution, Dojo accepts parameter selections from end users and "rehydrates" the relevant config files with those parameter selections.
 
@@ -174,7 +150,7 @@ On the right-hand side of the terminal there is a dialog box; some entries will 
 
 The same process applies to directive annotations as applied to [configuration annotation](#configuration-file-annotation).
 
-Repeat the annotation process for every applicable parameter value in your model execution. Once complete, select save in the upper right-hand corner; this will save your annotated directive in Dojo.
+Repeat the annotation process for every applicable parameter value in your model execution directive. Once complete, select save in the upper right-hand corner; this will save your annotated directive in Dojo.
 
 > Note: your model can have only one directive. If running your model is a multi-step process, you must combine those steps into a single executable script or command.
 
@@ -212,8 +188,7 @@ As a recap, before publishing your image, you should have:
 
 If you have done all the above, you are ready to publish your image. Select `END SESSION`; you will be asked if you want to publish the image. Select `yes` and monitor the publication progress. When complete, you can go to https://hub.docker.com/repository/docker/jataware/dojo-publish and look under the tags section to verify that your image was pushed to DockerHub. You may need to expand the tags section.
 
-> Note: As discussed before, some models have custom images pre-built. If your model has a pre-built image, _**you do not need to publish the image**_
-
+> Note: for Dojo registration to be successful, **you must publish** your model!
 
 **IMPORTANT**
 If for some reason you do not wish to publish a container image, you must select `ABANDON SESSION`. As you noticed when launching into the model execution environment, there are a limited number of workers available. If you do not abandon your session, the container will continue to run and your worker will not be available to others wishing to register a model.
