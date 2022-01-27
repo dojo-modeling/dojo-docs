@@ -9,16 +9,20 @@
 
 ### Contents
 
-1. [Getting started](#getting-started)
-2. [Choosing your file](#choosing-your-file)
-3. [Geo and time inference](#geo-and-time-inference)
-4. [Annotating your dataset](#annotating-your-dataset)
+- [Data Registration](#data-registration)
+  - [Contents](#contents)
+  - [Getting started](#getting-started)
+    - [Documenting the Data](#documenting-the-data)
+    - [`World Modeler's Data Registration Form`:](#world-modelers-data-registration-form)
+  - [Choosing your file](#choosing-your-file)
+  - [Geo and time inference](#geo-and-time-inference)
+  - [Annotating your dataset](#annotating-your-dataset)
     - [Date formatting](#date-formatting)
     - [Build a date](#build-a-date)
     - [Coordinate pairs](#coordinate-pairs)
     - [Multi-part geographies](#multi-part-geographies)
     - [Qualifiers](#qualifiers)
-5. [Transforming the dataset](#transforming-the-dataset)
+  - [Transforming the dataset](#transforming-the-dataset)
 
 ### Getting started
 
@@ -35,15 +39,13 @@ You may begin by navigating to [dojo-modeling.com](https://dojo-modeling.com) an
 
 #### Documenting the Data
 
-The first page is a form that captures metadata about your data and you. Below is a demonstration video as well as descriptions for each field.
+The first page is a form that captures metadata about your data and you. Below is a demonstration as well as descriptions for each field.
 
 #### `World Modeler's Data Registration Form`:
 
-This form captures metadata about your data. There is a demonstration video below, as well as definitions for each field:
+This form captures metadata about your data. There is a demonstration below, as well as definitions for each field:
 
-<div class="iframe-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kYQshQqlp8M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+![Data Registration](imgs/data_registration.png)
 
 Model Overview Form Field Definitions:
 
@@ -85,10 +87,8 @@ A dataset such as the above should be transformed by the user _beforehand_ so th
 
 If your dataset is a GeoTIFF, you will be asked to provide the data band you wish to process and the name of the feature that resides in that band. You may optionally provide a date for the respective band.
 
-Below is a demonstration video on how to upload an excel file with tabs:
-<div class="iframe-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vdn8HO-_mnk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+Below is an image of the form that should appear after a multisheet excel file has been uploaded
+![Excel Sheets](imgs/excel_sheet.png)
 
 ### Geo and time inference
 
@@ -128,11 +128,6 @@ Some datasets have year, month and day split out into separate columns. In this 
 
 The user can then select the relevant year, month and day columns as well as ensure they have correct date formatters.
 
-Below is a demonstration video on how to annotate a Build-a-Date:
-<div class="iframe-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aUymMlfSVeg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
 #### Coordinate pairs
 
 Generally speaking, if a dataset has latitude and longitude in it we should annotate this and ignore the other geospatial information (unless they are [qualifiers](#qualifiers)) as this is the most granular location information available and can be used to geocode the remainder of the dataset.
@@ -140,11 +135,6 @@ Generally speaking, if a dataset has latitude and longitude in it we should anno
 However, latitude and longitude are not typically contained in the same column. So, we provide a mechanism for the user to associate a `latitude` with a `longitude` and vice versa. To do this, you indicate that the column `is part of a coordinate pair` and choose it's partner from the dropdown.
 
 ![Coordinate pair](imgs/coordinate-pair.png)
-
-Below is a demonstration video on how to annotate a coordinate pair:
-<div class="iframe-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ENUs0mxDy8A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
 
 #### Multi-part geographies
 
@@ -195,12 +185,6 @@ Many datasets contain features that _qualify_ other features. For example, in a 
 To set `Event Type` as a _qualifier_ for `fatalities` the user should check the box indicating that `this field qualifies another`. The user should then select the relevant columns that the current feature qualifies. One field may qualify many features; in this case select all relevant features that the field of interest qualifies.
 
 > Note: you should only _qualify_ other features, not `Geo` or `Date` information since those are inherently dataset qualifiers. This avoids "qualifying a qualifier."
-
-
-Below is a demonstration video on how to add a feature and a qualifier for that feature:
-<div class="iframe-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bHj8fWiLzG0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
 
 ### Transforming the dataset
 
