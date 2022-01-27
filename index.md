@@ -1,6 +1,6 @@
 # Entering the [Dojo](https://github.com/dojo-modeling/dojo) 
 
-<img src="imgs/Dojo_Logo_color.png" width="100"/> 
+<img src="imgs/Dojo_Logo_profile.png" width="100"/> 
 
 Dojo is a suite of software tools that allows domain experts to register their models using an intuitive web based terminal emulator. Dojo models can be executed via a standardized, expressive API by wrapping heterogenous models into a consistent interface for parameterization and transforming model outputs into a consistent, easy to consume format. Dojo models facilitate reproducible research by enabling modelers to containerize and share their models with guarantees that the model will perform as they expect outside their own compute environment. Additionally, Dojo provides a mechanism for analysts and domain experts to register and transform datasets for use in downstream modeling workflows.
 
