@@ -23,7 +23,7 @@ Flags:
 Use "dojo [command] --help" for more information about a command.
 ```
 
-## Example usage:
+### Example usage:
 
 `dojo annotate`: 
 ```
