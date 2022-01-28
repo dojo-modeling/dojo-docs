@@ -17,7 +17,7 @@ Dojo ([https://github.com/dojo-modeling](https://github.com/dojo-modeling)) is a
 The model registration workflow is designed to provide domain modelers with a friendly and familiar environment from which to install, setup, and execute their model. Throughout this process, the modeler is queried for key information about model metadata and how to parameterize the model. The modeler also annotates model outputs so that they can be automatically transformed into a ready-to-use and well understood format each time the model is executed. The final step of the model registration workflow is the publication of a working "black box" model Docker container to Dockerhub. These containers can run the model with a set of explicit directives; however the Dojo modeling engine is naive to the inner workings of the model container. 
 
 <p align="center">
-    <img src="imgs/containerization_environment_medium.png" width="600" title="Dojo Containerization Environment"/> 
+    <img src="imgs/containerization_environment_medium.png" width="100%" title="Dojo Containerization Environment"/> 
     <br/>
     <i>Dojo Containerization Environment</i>
 </p>
@@ -35,7 +35,7 @@ This section is intended to provide an overview of the Geotemporal format which 
 Normalizing model outputs to this consistent Geotemporal format facilitates rapid inter-model comparison and visualization via platforms such as [Uncharted Software's](https://uncharted.software/) Causemos tool.
 
 <p align="center">
-    <img src="imgs/causemos_viz.png" width="100%" title="Causemos Modeling Platform"/> 
+    <img src="imgs/causemos_viz.png" width="400" title="Causemos Modeling Platform"/> 
     <br/>
     <i>Uncharted's Causemos Platform</i>
 </p>
