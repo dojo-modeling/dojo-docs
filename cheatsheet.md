@@ -1,6 +1,4 @@
-# Dojo
-
-## Dojo Terminal commands
+# Dojo Terminal commands
 There are a handful of Dojo specific commands that you must use inside the Dojo terminal emulator to successfully register your model. 
 
 ```
@@ -25,7 +23,7 @@ Flags:
 Use "dojo [command] --help" for more information about a command.
 ```
 
-### Example usage:
+## Example usage:
 
 `dojo annotate`: 
 ```
@@ -53,7 +51,7 @@ Tagged images/Akado1_2016-10-10_Google_Earth.png
 <br>
 <br>
 
-## Dojo CLI commands
+# Dojo CLI commands
 
 | Command   	| Description                                                   	| Example Usage          	|
 |-----------	|---------------------------------------------------------------	|------------------------	|
