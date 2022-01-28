@@ -1,5 +1,5 @@
 # Dojo Terminal commands
-There are a handful of Dojo specific commands that you must use inside the Dojo terminal emulator to successfully register your model. 
+There are a handful of Dojo specific commands that you must use inside the Dojo containerization environment/terminal emulator to successfully register your model. 
 
 ```
 $ dojo
@@ -52,6 +52,7 @@ Tagged images/Akado1_2016-10-10_Google_Earth.png
 <br>
 
 # Dojo CLI commands
+The [Dojo CLI](https://github.com/dojo-modeling/dojo-cli) is a tool to use outside the Dojo ecosystem to execute Dojo models. You can install it anywhere Docker is installed and execute all models registered to Dojo with custom parameters. It's commands are:
 
 | Command   	| Description                                                   	| Example Usage          	|
 |-----------	|---------------------------------------------------------------	|------------------------	|
