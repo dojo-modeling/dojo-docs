@@ -35,7 +35,7 @@ This section is intended to provide an overview of the Geotemporal format which 
 Normalizing model outputs to this consistent Geotemporal format facilitates rapid inter-model comparison and visualization via platforms such as [Uncharted Software's](https://uncharted.software/) Causemos tool.
 
 <p align="center">
-    <img src="imgs/causemos_viz.png" width="400" title="Causemos Modeling Platform"/> 
+    <img src="imgs/causemos_viz_medium.png" width="100%" title="Causemos Modeling Platform"/> 
     <br/>
     <i>Uncharted's Causemos Platform</i>
 </p>
