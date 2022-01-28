@@ -1,16 +1,54 @@
 # Dojo
 
 ## Dojo Terminal commands
-There are a handful of Dojo specific commands that you must use inside the Dojo terminal emulator to successfully register your model. They are:
+There are a handful of Dojo specific commands that you must use inside the Dojo terminal emulator to successfully register your model. 
 
-| Command   	| Description                                                   	| Example Usage          	|
-|-----------	|---------------------------------------------------------------	|------------------------	|
-| `edit`      	| opens a simple text editor                                    	| `edit myfile.txt`        	|
-| `config`    	| opens the configuration file annotation tool                  	| `config parameters.json` 	|
-| `accessory` 	| tags an output accessory file such as an image or video; caption is optional       	| `accessory floods.mp4 "Video of flood activity in selected basin."`   	|
-| `tag`       	| tags an output file and opens the output file annotation tool 	| `tag results.csv`        	|
+```
+$ dojo
+dojo command line utility
 
-> Note: you may optionally provide a caption to the `accessory` command. This should be double quoted after the accessory path (per the example usage).
+Usage:
+  dojo [command]
+
+Available Commands:
+  annotate    tags an output file and opens the web output file annotation tool
+  config      Opens the web configuration file annotation tool
+  edit        Edit this file in the web editor
+  help        Help about any command
+  tag         Tags an output accessory file such as an image or video
+  version     Print Version
+
+Flags:
+  -h, --help      help for dojo
+  -v, --verbose   verbose output
+
+Use "dojo [command] --help" for more information about a command.
+```
+
+### Example usage:
+
+`dojo annotate`: 
+```
+$ dojo annotate Output_Files/Case1_0D-u.nc
+```
+
+`dojo config`: 
+```
+$ dojo config calibrate_cfg_files/calibrate_Ankush.cfg 
+Opening config for calibrate_cfg_files/calibrate_Ankush.cfg
+```
+
+`dojo edit`:
+```
+$ dojo edit TopoFlow_Calibration_Baro_at_Masha.ipynb 
+Launching editor /home/clouseau/topoflow36/TopoFlow_Calibration_Baro_at_Masha.ipynb
+```
+
+`dojo tag`: 
+```
+$ dojo tag images/Akado1_2016-10-10_Google_Earth.png "Akado 1, 10.10.2016"
+Tagged images/Akado1_2016-10-10_Google_Earth.png
+```
 
 <br>
 <br>
