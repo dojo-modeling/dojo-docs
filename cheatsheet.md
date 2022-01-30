@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Cheatsheet
-parent: Home
+parent: Model Registration
 has_toc: true
 ---
 

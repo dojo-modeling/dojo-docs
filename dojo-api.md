@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Dojo-API
-parent: Home
+title: API
+nav_order: 4
 has_toc: true
 ---
 

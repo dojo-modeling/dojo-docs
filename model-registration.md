@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Model-Registration
-parent: Home
+title: Model Registration
+nav_order: 1
 has_toc: true
 ---
 

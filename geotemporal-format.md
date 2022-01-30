@@ -1,3 +1,10 @@
+---
+layout: default
+title: Geotemporal Format
+parent: Data Registration
+has_toc: true
+---
+
 ## Geotemporal Format
 
 Dojo will optionally convert model data into the Geotemporal format used in several applications.

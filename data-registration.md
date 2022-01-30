@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Data-Registration
-parent: Home
+title: Data Registration
+nav_order: 3
+has_children: true
 has_toc: true
 ---
 
