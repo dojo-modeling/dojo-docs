@@ -13,9 +13,9 @@ has_toc: true
   }
 </style>
 
-## Model Registration
+# Model Registration
 
-### Contents
+## Contents
 
 - [Overview](#overview)
 - [Model Metadata and Provenance](#model-metadata-and-provenance)
