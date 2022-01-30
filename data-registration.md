@@ -1,3 +1,10 @@
+---
+layout: default
+title: Data-Registration
+parent: Home
+has_toc: true
+---
+
 <style>
   .iframe-container {
 		text-align:center;

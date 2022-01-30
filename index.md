@@ -1,4 +1,11 @@
-# Entering the [Dojo](https://github.com/dojo-modeling/dojo) 
+---
+layout: default
+title: Home
+nav_order: 1
+has_toc: true
+---
+
+# [Dojo](https://github.com/dojo-modeling/dojo) 
 
 <img src="imgs/Dojo_Logo_profile.png" width="100"/> 
 

@@ -1,3 +1,10 @@
+---
+layout: default
+title: Dojo-API
+parent: Home
+has_toc: true
+---
+
 # The Dojo API
 
 This document outlines how to interact with the Dojo API to fetch models, execute models, and fetch model runs.

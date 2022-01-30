@@ -1,3 +1,10 @@
+---
+layout: default
+title: Cheatsheet
+parent: Home
+has_toc: true
+---
+
 # Dojo Terminal commands
 There are a handful of Dojo specific commands that you must use inside the Dojo containerization environment/terminal emulator to successfully register your model. 
 
