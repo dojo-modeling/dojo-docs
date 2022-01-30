@@ -21,7 +21,7 @@ has_toc: true
 - [Model Metadata and Provenance](#model-metadata-and-provenance)
 - [Containerization and Execution](#containerization-and-execution)
   - [Build your model](#build-your-model)
-  - [Dojo Commands:](#dojo-commands)
+  - [Dojo Commands](#dojo-commands)
   - [Configuration File Annotation](#configuration-file-annotation)
   - [Directive Annotation](#directive-annotation)
   - [Output File Annotation](#output-file-annotation)
@@ -111,12 +111,7 @@ You will build your model image inside the model execution environment (a Docker
 
 
 ### Dojo Commands:
-You can leverage the commands below while registering your model:
-
-- `edit <filename.ext>`: launch editor to modify any of your files.
-- `config <path_to_config_file.json>`: launch a tool to define and annotate parameters.
-- `tag <path_to_outputfile.csv>`: launch an annotation tool to define and classify the columns of your data.
-- `accessory <path_to_accessory.png> "caption here"`: tags an output accessory file such as an image or video; caption is optional
+Take a look at the model registration commands [cheatsheet](./cheatsheet.md) for a reference for Dojo's containerization environment commands.
 
 ### Configuration File Annotation
 If your model uses configuration files to set parameters or tunable knobs you will need to annotate them in order to expose these parameters to Dojo end-user. Once the annotation window is launched, you can annotate each parameter and provide metadata and detailed information. 
