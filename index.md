@@ -14,8 +14,8 @@ Dojo ([https://github.com/dojo-modeling](https://github.com/dojo-modeling)) is a
 ## Contents
 
 1. [Model Registration](./model-registration.md)
-2. [Model Execution](./model-execution.md)
-3. [Data Registration](./data-registration.md)
+2. [Data Registration](./data-registration.md)
+3. [Model Execution](./model-execution.md)
 4. [Dojo API](./dojo-api.md)
 
 ## Model Registration
