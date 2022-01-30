@@ -21,7 +21,7 @@ has_toc: true
   - [Contents](#contents)
   - [Getting started](#getting-started)
     - [Documenting the Data](#documenting-the-data)
-    - [`World Modeler's Data Registration Form`:](#world-modelers-data-registration-form)
+    - [World Modeler's Data Registration Form:](#world-modelers-data-registration-form)
   - [Choosing your file](#choosing-your-file)
   - [Geo and time inference](#geo-and-time-inference)
   - [Annotating your dataset](#annotating-your-dataset)
