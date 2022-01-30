@@ -32,5 +32,10 @@ If your `CSV` or `Excel` file has extraneous rows or columns, includes arbitrary
 
 Data preparation for Dojo is less an issue for other acceptable formats. If your dataset is a `GeoTIFF`, you will be asked to provide the data band you wish to process and the name of the feature that resides in that band. You may optionally provide a date for the respective band.
 
-Below is an image of the form that should appear after a multisheet excel file has been uploaded
-![Excel Sheets](imgs/excel_sheet.png)
+When uploading an `Excel` file, you will be asked to select the sheet of interest. Currently Dojo only supports registering one sheet at a time.
+
+<p align="center">
+    <img src="imgs/excel_sheet.png" width="400" title="Excel sheet selector"/> 
+    <br/>
+    <i>Excel sheet selector</i>
+</p>
