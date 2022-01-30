@@ -22,7 +22,6 @@ has_toc: true
   - [Getting started](#getting-started)
     - [Documenting the Data](#documenting-the-data)
     - [World Modeler's Data Registration Form:](#world-modelers-data-registration-form)
-  - [Choosing your file](#choosing-your-file)
   - [Geo and time inference](#geo-and-time-inference)
   - [Annotating your dataset](#annotating-your-dataset)
     - [Date formatting](#date-formatting)
@@ -68,7 +67,7 @@ Model Overview Form Field Definitions:
   - `Email`: The primary point of contact's e-mail address. If you have one, a group e-mail is also acceptable.
   - `Organization`: The organization that created the dataset. 
   - `Website`: This can be a link to your dataset's repository or another website that you may maintain that provides additional context about your data.
-  - `File`: See [acceptable data formats](./data-format.md)
+  - `File`: See [preparing data for Dojo](./data-format.md)
 
 ### Geo and time inference
 

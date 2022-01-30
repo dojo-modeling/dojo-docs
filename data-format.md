@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Acceptable data formats
+title: Preparing data for Dojo
 parent: Data Registration
 has_toc: true
 ---
 
-# Acceptable data formats
+# Preparing data for Dojo
 
 Dojo can accept `CSV`, `Excel`, `GeoTIFF` and `NetCDF` files. When you initially upload a file you may be presented with a set of options depending upon the detected file type.
 
