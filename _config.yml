@@ -1,5 +1,7 @@
 remote_theme: pmarsceill/just-the-docs
-logo: "/imgs/Dojo_Logo_color.png"
+
+logo: "imgs/Dojo_Logo_color.png"
+
 aux_links:
   "View Dojo on GitHub":
     - "//github.com/dojo-modeling"  
