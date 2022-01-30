@@ -20,8 +20,7 @@ has_toc: true
 - [Data Registration](#data-registration)
   - [Contents](#contents)
   - [Getting started](#getting-started)
-    - [Documenting the Data](#documenting-the-data)
-    - [World Modeler's Data Registration Form:](#world-modelers-data-registration-form)
+    - [Metadata capture](#metadata-capture)
   - [Geo and time inference](#geo-and-time-inference)
   - [Annotating your dataset](#annotating-your-dataset)
     - [Date formatting](#date-formatting)
@@ -44,11 +43,7 @@ You may begin by navigating to [dojo-modeling.com](https://dojo-modeling.com) an
 
 > Please provide as much information as possible throughout the data registration process to ensure that sufficient information is available to end-users of your dataset.
 
-#### Documenting the Data
-
-The first page is a form that captures metadata about your data and you. Below is a demonstration as well as descriptions for each field.
-
-#### `World Modeler's Data Registration Form`:
+#### Metadata capture
 
 This form captures metadata about your data. There is a demonstration below, as well as definitions for each field:
 
