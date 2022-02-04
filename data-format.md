@@ -30,21 +30,23 @@ However, a transposed dataset where time is represented by columns such as the f
 | Djibouti | 0.7  | 0.8  | 0.9  |
 | Eritrea  | 0.6  | 0.7  | 0.9  |
 
-A dataset such as the above should be transformed by the user beforehand_ so that each item of interest has its own column. Datasets with line breaks or non-standardized formatting are unacceptable for registration to Dojo. For example this dataset:
+A dataset such as the above should be transformed by the user beforehand_ so that each item of interest has its own column. Datasets with line breaks or non-standardized formatting are unacceptable for registration to Dojo. 
 
-| **Survey 1** 	|          	| _Notes: survey collected by 3rd party enumerator_ 	|
+For example this dataset **cannot be registered to Dojo as is**:
+
+| **Survey 1** 	|          	| **_Notes: survey collected by 3rd party enumerator_** 	|
 |----------	|----------	|-------------------------------------------------	|
 | Year     	| Country  	| Crop_Index                                      	|
 | 2015     	| Djibouti 	| 0.7                                             	|
 | 2016     	| Djibouti 	| 0.8                                             	|
 |          	|          	|                                                 	|
 |          	|          	|                                                 	|
-| **Survey 2** 	|          	| _Notes: survey collected by World Bank_           	|
+| **Survey 2** 	|          	| **_Notes: survey collected by World Bank_**           	|
 | Year     	| Country  	| Fertilizer_Index                                	|
 | 2015     	| Djibouti 	| 1.8                                             	|
 | 2015     	| Eritrea  	| 2.1                                             	|
 
-should be converted to the below before registration to Dojo:
+Prior to registration, it should be cleaned and converted to the below format before registration to Dojo:
 
 | Survey_Number 	| Year 	| Country  	| Crop_Index 	| Fertilizer_Index 	| Notes                                     	|
 |---------------	|------	|----------	|------------	|------------------	|-------------------------------------------	|
@@ -53,7 +55,7 @@ should be converted to the below before registration to Dojo:
 | 2             	| 2015 	| Djibouti 	|            	| 1.8              	| survey collected by World Bank            	|
 | 2             	| 2015 	| Eritrea  	|            	| 2.1              	| survey collected by World Bank            	|
 
-Or, a format like the following could be used:
+Alternatively, a format like the following will be acceptable by Dojo:
 
 | Survey_Number 	| Year 	| Country  	| Index_Name       	| Index_Value 	| Notes                                     	|
 |---------------	|------	|----------	|------------------	|-------------	|-------------------------------------------	|
