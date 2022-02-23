@@ -1,3 +1,9 @@
+---
+layout: default
+title: Jupyter Notebooks
+parent: Model Registration
+has_toc: true
+---
 
 # Register Jupyter Notebook Model in Dojo
 
