@@ -13,7 +13,7 @@ If the parameters of the model are set in the notebook and modified manually for
 
 If the notebook reads in parameters from another file there is no need to tag anything in the notebook. Instead you will define those parameters using Dojo’s [Built-in "dojo" command](https://www.dojo-modeling.com/cheatsheet.html#dojo-terminal-commands) (specifically dojo config …) to tag the parameters. Dojo will handle updating that file before the notebook runs allowing that parameter to be exposed.
 
-## Tag a Cell with “parameters”
+## Preparing your Notebook
 
 > Note: tis process is slightly different for Jupyter Notebooks, JupyterLab 2.0-2.2.x, and JupyterLab V3 and up. Follow the directions created by Papermill [here -(adding parameters)](https://papermill.readthedocs.io/en/latest/usage-parameterize.html) for whatever case you have.
 
