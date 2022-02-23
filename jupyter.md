@@ -5,7 +5,7 @@ parent: Model Registration
 has_toc: true
 ---
 
-# Register Jupyter Notebook Model in Dojo
+# Registering Jupyter Notebook Models in Dojo
 
 To register a Jupyter notebook based model in Dojo we recommend installing [Papermill](https://papermill.readthedocs.io/en/latest/index.html) to run the model. Papermill allows the ability to run a notebook as an executable as well as tag and expose parameters, which might be needed depending on how model parameters are defined.
 
