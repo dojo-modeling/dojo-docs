@@ -15,7 +15,7 @@ If the notebook reads in parameters from another file there is no need to tag an
 
 ## Preparing your Notebook
 
-> Note: tis process is slightly different for Jupyter Notebooks, JupyterLab 2.0-2.2.x, and JupyterLab V3 and up. Follow the directions created by Papermill [here -(adding parameters)](https://papermill.readthedocs.io/en/latest/usage-parameterize.html) for whatever case you have.
+> Note: this process is slightly different for Jupyter Notebooks, JupyterLab 2.0-2.2.x, and JupyterLab V3 and up. Follow the directions created by Papermill [here -(adding parameters)](https://papermill.readthedocs.io/en/latest/usage-parameterize.html) for whatever case you have.
 
 There are three simple steps to tag parameters that are defined in the notebook:
 
@@ -47,7 +47,7 @@ After editing the directive and setting the parameter .5 to “temperature” it
 
   
 ```
-papermill test.ipynb -p temp {{temperature}} -
+papermill test.ipynb -p temp \{\{temperature\}\}\ -
 ```    
 
   
