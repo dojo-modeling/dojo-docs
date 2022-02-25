@@ -7,7 +7,7 @@ has_toc: true
 
 # Registering Excel Models in Dojo
 
-To aid in running models written in Excel, Jataware has written a helper tool that allows execution of .xlsx files with the ability to define variables which can be set during Dojo model runs. Since models must be executable via the command line to be registered to Dojo, this allows modelers with Excel based models to register them into Dojo.
+To aid in running models written in Excel, Dojo has a helper tool that allows for the execution of `.xlsx` files with the ability to define dynamic parameters. Since models must be executable via the command line to be registered to Dojo, this allows modelers with Excel based models to register them into Dojo.
 
 
 ## Excel-Model-Runner
@@ -38,25 +38,25 @@ The parameter for `Rainfall` is in `C5`, the one for `Temperature` is in `C6`, a
 
 ```
 {
-  "Parameters.C5": "1.1",
-  "Parameters.C6": "1.2",
-  "Parameters.C7": "0.9"
+  "Parameters.C5": "0.9",
+  "Parameters.C6": "0.9",
+  "Parameters.C7": "1.2"
 }
 ```
 
 Alternatively, you could create a CSV called `params.csv` which would contain:
 
 ```
-Parameters.C5,1.1,rainfall
-Parameters.C6,1.2,temperature
-Parameters.C7,0.9,fertalizer
+Parameters.C5,0.9,rainfall
+Parameters.C6,0.9,temperature
+Parameters.C7,1.2,fertilizer
 ```
 
 Either option will work. 
 
 ### Registering your model
 
-You should proceed to register your model just like any other in Dojo. When asked to select a starting image, you should choose the `Ubuntu-Analytics` one since the `Excel-Model-Runner` is already installed there. Alternatively, you can install it by hand from [its Github page](https://github.com/dojo-modeling/excel-model-runner).
+You should proceed to register your model just like any other model in Dojo. When asked to select a starting image, you should choose the `Ubuntu-Analytics` one since the `Excel-Model-Runner` is already installed there. Alternatively, you can install it by hand from [its Github page](https://github.com/dojo-modeling/excel-model-runner).
 
 Next, ensure that your model Excel file and your `params.json` (or `params.csv`) file are loaded into the containerization environment. You should use `dojo config params.json` to annotate your config file. Then, execute the model with something like:
 
@@ -64,7 +64,7 @@ Next, ensure that your model Excel file and your `params.json` (or `params.csv`)
 python3 run-excel-model my_model.xlsx params.json
 ```
 
-Your results will be stored to the `outputs` directory; from there you should use `dojo annotate` to annotate them.
+Your results will be stored to the `outputs` directory; from there you should use `dojo annotate` to annotate them per the usual model registration workflow.
 
 > Note: if you need help getting your Excel model and parameter file into the containerization environment please reach out to dojo@jataware.com
 
