@@ -61,7 +61,11 @@ You should proceed to register your model just like any other model in Dojo. Whe
 Next, ensure that your model Excel file and your `params.json` (or `params.csv`) file are loaded into the containerization environment. You should use `dojo config params.json` to annotate your config file. Then, execute the model with something like:
 
 ```
-python3 run-excel-model my_model.xlsx params.json
+run-excel-model my_model.xlsx params.json
+```
+If the above doese not work, you may need to use the following:
+```
+python3 /usr/local/bin/run-excel-model my_model.xlsx params.json
 ```
 
 Your results will be stored to the `outputs` directory; from there you should use `dojo annotate` to annotate them per the usual model registration workflow.
