@@ -50,5 +50,5 @@ After editing the directive and setting the parameter .5 to “temperature” it
 papermill test.ipynb -p temp {{temperature}} -
 ```    
 
-  
+
 Now you can save and publish the model and it should work with dojo with exposed parameters.
