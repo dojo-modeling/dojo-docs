@@ -5,7 +5,7 @@ parent: Model Registration
 has_toc: true
 ---
 
-# Register Jupyter Notebook Model in Dojo
+# Registering Jupyter Notebook Models in Dojo
 
 To register a Jupyter notebook based model in Dojo we recommend installing [Papermill](https://papermill.readthedocs.io/en/latest/index.html) to run the model. Papermill allows the ability to run a notebook as an executable as well as tag and expose parameters, which might be needed depending on how model parameters are defined.
 
@@ -15,7 +15,7 @@ If the notebook reads in parameters from another file there is no need to tag an
 
 ## Preparing your Notebook
 
-> Note: tis process is slightly different for Jupyter Notebooks, JupyterLab 2.0-2.2.x, and JupyterLab V3 and up. Follow the directions created by Papermill [here -(adding parameters)](https://papermill.readthedocs.io/en/latest/usage-parameterize.html) for whatever case you have.
+> Note: this process is slightly different for Jupyter Notebooks, JupyterLab 2.0-2.2.x, and JupyterLab V3 and up. Follow the directions created by Papermill [here -(adding parameters)](https://papermill.readthedocs.io/en/latest/usage-parameterize.html) for whatever case you have.
 
 There are three simple steps to tag parameters that are defined in the notebook:
 
@@ -50,5 +50,5 @@ After editing the directive and setting the parameter .5 to “temperature” it
 papermill test.ipynb -p temp {{temperature}} -
 ```    
 
-  
+
 Now you can save and publish the model and it should work with dojo with exposed parameters.
