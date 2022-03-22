@@ -33,22 +33,22 @@ There are two main activities associated with registering a model to Dojo:
 
 1. **Model Metadata and Provenance**: modelers begin the registration process by providing key metadata about their model and choosing relevant geographic regions so that Dojo can facilitate search and discovery across its model registry.
 
-2. **Containerization and Execution**: next, modelers are directed to a containerization environment. In this environment, modelers teach Dojo how to run their models, how to set parameters, and provide metadata about model output files. The end result is the publication of a Docker image and associated metadata about the registered model.
+2. **Containerization and Execution**: next, modelers are directed to a containerization environment. Here, modelers teach Dojo how to run their models and how to set parameters. They can also provide metadata about model output files. The end result is the publication of a Docker image and associated metadata about the registered model.
 
 To get started, visit [https://dojo-modeling.com](https://dojo-modeling.com/). Please reach out to [dojo@jataware.com](mailto:dojo@jataware.com) for credentials or help with the application. 
 
 ## Model Metadata and Provenance
 
-To begin the process, Dojo captures metadata about each model and its maintainer. It's important to be as thorough as possible to ensure the end-user can understand at a high-level what each model does, how it does it, and what it produces.
+To begin the process, Dojo captures metadata about each model and its maintainer. It's important to be as thorough as possible to ensure that the end-user can understand at a high-level what each model does, how it does it, and what it produces.
 
 ![Model Registration](imgs/model_registration.png)
 
 Key definitions:
 
-- `Model Name`: The end-user will see this name when running your model. While spaces and upper/lower case are allowed, _**do not use special characters, to include parenthesis**_.
-- `Model Website`: This can be a link to your model repository or another website that you may maintain that provides additional context about your model.
-- `Model Family`: Model family refers to a group of models with similar characteristics. If you have several procedures based on the same underlying model family, you can link those models or model procedures here under a common family name of your choosing, such as `LPJmL`. If your model does not have a natural grouping with other models, you can name it under an appropriate category related to your model or repeat your model name.
-- `Model Description`: Your description here is the forward-facing documentation about your model that the end-user will see. Include as much information as possible to explain what your model does and what it produces. Include any notes that may be required to explain any model idiosyncrasies. If your model takes a long time to run, you may want to include an estimated run time.
+- `Model Name`: (required) The end-user will see this name when running your model. While spaces and upper/lower case are allowed, _**do not use special characters, including parentheses**_.
+- `Model Website`: (required) This can be a link to your model repository or another website that provides additional context about your model.
+- `Model Family`: (required) Model family refers to a group of models with similar characteristics. If you have several procedures based on the same underlying model family, you can link those models or model procedures here under a common family name of your choosing, such as `LPJmL`. If your model does not have a natural grouping with other models, you can name it with an appropriate category related to your model or repeat your model name.
+- `Model Description`: (required) This is the forward-facing documentation about your model that the end-user will see. Include as much information as possible to explain what your model does and what it produces. Include notes that may be required to explain model idiosyncrasies. If your model takes a long time to run, you may want to include an estimated run time.
 
 The next page captures general metadata about the model and its maintainer. There is a short demo below, as well as definitions for each field:
 
@@ -56,15 +56,15 @@ The next page captures general metadata about the model and its maintainer. Ther
 
 Key definitions:
 
-- `Maintainer Name`: The primary point of contact for the model.
-- `Maintainer Email`: The primary point of contact's e-mail address. If you have one, a group e-mail is also acceptable.
-- `Maintainer Organization`: The organization that developed the model. 
-- `Is this model stochastic?`: Check yes or no depending on your model.
-- `Category`: Common groupings that you would like your model categorized as. After typing your desired category, press the space bar to add additional categories. The categories associated with your model enable better discoverability of your model when the end-user searches for a broad model-type.
+- `Maintainer Name`: (required) The primary point of contact for the model.
+- `Maintainer Email`: (required) The primary point of contact's e-mail address. If you have one, a group e-mail is also acceptable.
+- `Maintainer Organization`: (required) The organization that developed the model.
+- `Model Domain(s)`: (optional) A preset list of general subject domains that your model may fit into. You can select as many of these domains as you feel fit your model. Domains can help end-users search for models by broad model type/subject area.
 
-  > Note: Spaces are not allowed when entering your category. To include a multi-word category, replace spaces with underscores. For example, `crop production` would be entered as `crop_production`. 
 
-Next, modelers provide information about the model's geographic coverage. Modelers can add geographic areas by either selecting an area area by name or building a bounding box around an area of interest.
+Next, modelers provide information about the model's geographic coverage. Modelers can add geographic areas by either:
+- selecting an area by name
+- building a bounding box around an area of interest
 
 Steps to add a geographic coverage by administration levels: 
 
@@ -96,9 +96,11 @@ Once you have added your geographic areas, Click `SUBMIT MODEL` to move the next
 
 To launch the model execution environment, you will need to select a base image from the available drop-down menu. You may also provide the ID of an existing Debian (Ubuntu) based Docker image on Dockerhub to use as your starting point.
 
-After selecting the appropriate image you should launch your registration worker.
-
 ![Select Worker](imgs/select-worker.png)
+
+After you've selected an image image, clicking `LAUNCH` will bring you to the `provisioning` page, where you'll wait to be redirected to the terminal once your Docker image has been loaded.
+
+![Provisioning](imgs/provisioning.png)
 
 ### Building your model
 
@@ -114,7 +116,7 @@ You will build your model image inside the model execution environment (a Docker
 Take a look at the model registration commands [cheatsheet](./cheatsheet.md) for a reference for Dojo's containerization environment commands.
 
 ### Configuration File Annotation
-If your model uses configuration files to set parameters or tunable knobs you will need to annotate them in order to expose these parameters to Dojo end-user. Once the annotation window is launched, you can annotate each parameter and provide metadata and detailed information. 
+If your model uses configuration files to set parameters or tunable knobs, you will need to annotate them in order to expose these parameters to Dojo end-users. Once the annotation window is launched, you can annotate each parameter and provide metadata and detailed information.
 
 With Dojo, you can annotate any plain text/ascii configuration file, including `.txt`, `.yaml`, `.json`, `.xml`, etc. 
 
@@ -126,7 +128,7 @@ To launch the config annotation window run (replace `<path_to_config_file.json>`
 
 
   ```
-  config <path_to_config_file.json>
+  dojo config <path_to_config_file.json>
   ```
 
 1. Selecting your parameter. Only highlight the parameters you wish to expose to the end-user. After highlighting _only the parameter value you wish to expose_ (i.e. do not highlight the quotes of strings or the variable name), Dojo will launch an annotation window to describe your parameter.
