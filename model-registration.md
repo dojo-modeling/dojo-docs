@@ -41,7 +41,7 @@ To get started, visit [https://dojo-modeling.com](https://dojo-modeling.com/). P
 
 To begin the process, Dojo captures metadata about each model and its maintainer. It's important to be as thorough as possible to ensure that the end-user can understand at a high-level what each model does, how it does it, and what it produces.
 
-![Model Registration](imgs/model_registration.png)
+![Model Registration](imgs/registration-1-model-overview.png)
 
 Key definitions:
 
@@ -52,23 +52,24 @@ Key definitions:
 
 The next page captures general metadata about the model and its maintainer. There is a short demo below, as well as definitions for each field:
 
-![Model Specifics](imgs/model_specifics.png)
+![Model Specifics](imgs/registration-2-model-details.png)
 
 Key definitions:
 
 - `Maintainer Name`: (required) The primary point of contact for the model.
 - `Maintainer Email`: (required) The primary point of contact's e-mail address. If you have one, a group e-mail is also acceptable.
 - `Maintainer Organization`: (required) The organization that developed the model.
+- `Model Start/End Date`: (optional) The start and end date of the model's coverage.
 - `Model Domain(s)`: (optional) A preset list of general subject domains that your model may fit into. You can select as many of these domains as you feel fit your model. Domains can help end-users search for models by broad model type/subject area.
 
 
-Next, modelers provide information about the model's geographic coverage. Modelers can add geographic areas by either:
+Next, modelers provide optional information about the model's geographic coverage. Modelers can add geographic areas by either:
 - selecting an area by name
 - building a bounding box around an area of interest
 
-Steps to add a geographic coverage by administration levels: 
+Steps to add a geographic coverage by name:
 
-![Add Region by Name](imgs/add_region-name.png)
+![Add Region by Name](imgs/registration-3.1-model-region-name.png)
 
 1. Click on `ADD REGIONS BY NAME`
 2. In the search box, enter a place name, country, or any admin-level 1 through 3.
@@ -76,7 +77,8 @@ Steps to add a geographic coverage by administration levels:
 4. Your selection will appear in the search box: **click on `ADD REGION`** to add it to the `Selected Regions`.
 5. Repeat the process to add any other geographic areas.
 
-![Add Region by Bounding Box](imgs/add_region-coordbox.png)
+![Add Region by Bounding Box](imgs/registration-3.3-model-region-coords-search.png)
+![Mapped Region by Bounding Box](imgs/registration-3.4-model-region-coords-added.png)
 
 Steps to add a geographic coverage by building a bounding box:
 
@@ -90,13 +92,15 @@ Steps to add a geographic coverage by building a bounding box:
   
 3. Select `ADD REGION TO MAP`
 
-Once you have added your geographic areas, Click `SUBMIT MODEL` to move the next step in the registration process.
+    >Note : The map does not automatically zoom in on newly added coordinates. You can zoom in manually to find your bounding box. If it is incorrect, you can remove it by clicking the X on the coordinates in the Selected Regions above.
+
+Once you have added your geographic areas, click `SUBMIT MODEL` to move the next step in the registration process.
 
 ## Containerization and Execution
 
 To launch the model execution environment, you will need to select a base image from the available drop-down menu. You may also provide the ID of an existing Debian (Ubuntu) based Docker image on Dockerhub to use as your starting point.
 
-![Select Worker](imgs/select-worker.png)
+![Select Worker](imgs/provision-select.png)
 
 After you've selected an image image, clicking `LAUNCH` will bring you to the `provisioning` page, where you'll wait to be redirected to the terminal once your Docker image has been loaded.
 
