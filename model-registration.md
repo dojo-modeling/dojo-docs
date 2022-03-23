@@ -112,15 +112,15 @@ You will build your model image inside the model execution environment (a Docker
 
 - Clone your model code into the container.
 - Install any requirements needed to run your model.
-- Test model execution. This can be an iterative approach in that you can make several test runs to ensure that you model is running and producing the expected results.
-- Once you have a successful model run, Dojo will need to learn how you run your model, what input parameters you want to expose to the end-user, metadata about your output file(s), and the directory where your results are located. [Quick Reference](#quick-command-reference) is a short introduction to the commands you will need followed by more in depth discussions and demonstrations of each command.
+- Test model execution. This can be an iterative approach in that you can make several test runs to ensure that your model is running and producing the expected results.
+- Once you have a successful model run, Dojo will need to learn how you run your model, what input parameters you want to expose to the end-user, metadata about your output file(s), and the directory where your results are located.
 
 
 ### Dojo Commands:
-Take a look at the model registration commands [cheatsheet](./cheatsheet.md) for a reference for Dojo's containerization environment commands.
+Along with the Debian terminal commands you'll be able to execute in the virtual terminal as you configure your model, Dojo has a number of custom commands to help you register your model. You can type `dojo` at any time while in the terminal to bring up the helper text in the terminal, or view the [command cheatsheet](./cheatsheet.md).
 
 ### Configuration File Annotation
-If your model uses configuration files to set parameters or tunable knobs, you will need to annotate them in order to expose these parameters to Dojo end-users. Once the annotation window is launched, you can annotate each parameter and provide metadata and detailed information.
+If your model uses configuration files to set parameters or tunable knobs, you will need to annotate them in order to expose these parameters to Dojo end-users. Once the annotation window is launched, you can annotate each parameter and provide metadata.
 
 With Dojo, you can annotate any plain text/ascii configuration file, including `.txt`, `.yaml`, `.json`, `.xml`, etc. 
 
@@ -137,10 +137,10 @@ To launch the config annotation window run (replace `<path_to_config_file.json>`
 
 1. Selecting your parameter. Only highlight the parameters you wish to expose to the end-user. After highlighting _only the parameter value you wish to expose_ (i.e. do not highlight the quotes of strings or the variable name), Dojo will launch an annotation window to describe your parameter.
 2. Available fields:
- - `Name`: The natural language name that want to call your parameter; string only and spaces are allowed.
- - `Description`: As with your model description, the parameter description should be detailed. The end-user will rely on this description to gain an understanding of the parameter. For non-standard formats, be sure to include not only an explanation, but also an example. For example, if choosing input Parameter A requires the end-user to select a subset from input Parameter B, be sure to include that here. 
+ - `Name`: The natural language name that you want to call your parameter; string only, spaces are allowed.
+ - `Description`: As with your model description, the parameter description should be detailed. The end-user will rely on this description to gain an understanding of the parameter. Make sure to include examples alongside explanations if using non-standard formats. For example, explain that choosing input Parameter A requires the end-user to select a subset from input Parameter B.
  - `Type`: Available options include string, integer, float, Date/time, and boolean. Choose the type from the dropdown that classifies your parameter.
- - `Pre-Defined Options`: A checkbox option if you would like to constrain the available parameter values to the end-user. Selecting the checkbox will expand the annotation window and allow you to enter any desired parameter values. **These values must align with your model**. I.E., if your model is expecting an underscore between countries with 2+ names, then your entry here must include the underscore. Select `Add option` as needed to include additional parameter values.
+ - `Pre-Defined Options`: A checkbox option if you would like to constrain the available parameter values to the end-user. Selecting the checkbox will expand the annotation window and allow you to enter any desired parameter values. **These values must align with your model**. I.e. if your model is expecting an underscore between countries with 2+ names, then your entry here must include the underscore. Select `Add option` as needed to include additional parameter values.
  - `Default Value`: While not required, it is recommended to provide a default parameter value.
  - `Unit`: Required if applicable to your parameter. There is a field below to describe the unit, so here simply enter the units such as KG/HA or kilograms per hectare.
  - `Unit Description`: Add detail here to fully explain the parameter's unit. For example, kilograms of crop produced per hectare during the rainy season.
@@ -153,7 +153,7 @@ Repeat the above process for every applicable parameter value in your configurat
 > Note: upon model execution, Dojo accepts parameter selections from end users and "rehydrates" the relevant config files with those parameter selections.
 
 ### Directive Annotation
-On the right-hand side of the terminal there is a dialog box; some entries will be flagged with an option to `MARK AS MODEL DIRECTIVE`. Next to the appropriate model run command, select this flag to launch an annotation window. Annotating the directive allows you to expose and describe parameters to the end-user.  Below is an example with details about each field following.
+On the right-hand side of the terminal there is a section labeled 'Shell History' where your commands will appear as you enter them. Most entries will have a button to their right reading `MARK AS DIRECTIVE`. Click the button next to the appropriate model run command to launch an annotation window. Annotating the directive allows you to expose and describe parameters to the end-user.  Below is an example with details about each field following.
 
 ![hi](imgs/edit_run_command.png)
 
@@ -165,14 +165,14 @@ Repeat the annotation process for every applicable parameter value in your model
 
 
 ### Output File Annotation
-Once your model has run you will need to annotate your output file(s). This step provides the required metadata to geocode, associate and format columns, and convert your output to a Geotemporal dataset. 
+Once your model has run, you will need to annotate your output file(s). This step provides the required metadata to geocode, associate, and format columns, and then convert your output to a Geotemporal dataset.
 
 > Currently, Dojo supports `.csv`, `.nc` (NetCDF), and `.tiff` (GeoTIFF). The files must have these correct extensions. For example, a `.txt` file that is `,` delimited, though technically a "CSV", will not be handled correctly by Dojo.
 
 To launch the output file annotation tool, run (replace `<path_to_output_file.csv>` with the appropriate file path and name):
 ```
 
-tag <path_to_output_file.csv>
+dojo annotate <path_to_output_file.csv>
 ```
 
 Below is a demonstration how to invoke the model output annotation interface:
@@ -183,21 +183,33 @@ For a detailed description on how to do this, please go to [Data Registration](.
 
 
 ### Completing the Registration
-When you have completed the above steps, you are ready to publish your model image to DockerHub. This image will be utilized downstream from the model registration process and allow end-users to change exposed parameters, run the updated model, and then inspect and conduct analyses with the results.
+When you have completed the above steps, you are ready to publish your model image to DockerHub. This image will be used downstream from the model registration process and allow end-users to change exposed parameters, run the updated model, and then inspect and conduct analyses with the results.
 
 As a recap, before publishing your image, you should have:
 
 1. Uploaded your model.
 2. Installed any dependencies.
 3. Iteratively tested your model and verified model behavior / results.
-4. For directive-type models: annotated all desired parameters on the command line; this includes both parameters you want to expose and parameters you wish to remain static but wish to provide additional explainability.
+4. For directive-type models: annotated all desired parameters on the command line; this includes both parameters you want to expose and parameters that will remain static but for which you would like to provide additional context.
 5. For configuration-type models: annotated all desired parameters in the configuration file.
 6. Annotated the model output file(s) to define the metadata, geocode, and transform your output to a Geotemporal dataset.
 7. Defined the location / directory of your output file(s). This is required in order to mount your model output and complete the geocoding and geotemporal transform of the results.
 
-If you have done all the above, you are ready to publish your image. Select `END SESSION`; you will be asked if you want to publish the image. Select `yes` and monitor the publication progress. When complete, you can go to https://hub.docker.com/repository/docker/jataware/dojo-publish and look under the tags section to verify that your image was pushed to DockerHub. You may need to expand the tags section.
+If you have done all the above, you are ready to review your image for publication. Select `SAVE AND CONTINUE`.
 
-> Note: for Dojo registration to be successful, **you must publish** your model!
 
-**IMPORTANT**
-If for some reason you do not wish to publish a container image, you must select `ABANDON SESSION`. As you noticed when launching into the model execution environment, there are a limited number of workers available. If you do not abandon your session, the container will continue to run and your worker will not be available to others wishing to register a model.
+If you want to discard the changes made to your model since launching the execution environment, you can instead select `ABANDON SESSION`. This will send you to the model's summary page. From the summary page you can relaunch the model to get back to the terminal/execution environment if you decide to make changes to the model in the future.
+
+## Summary Page & Publishing
+
+This will take you to the Model Summary page, where you can review the model metadata, configuration files, output files, and other information before publishing it to Dockerhub. You can make changes to your model on this page while your model is running, either by clicking the 'EDIT' button on the Model Details or by clicking the Pencil icon on any of the model files or directive. You can also go back to the terminal with the 'Back to Terminal' button in the upper left.
+
+>Note: Your model will automatically shut down after 15 minutes on the Summary page. If you are still working and need more time, you can refresh the page or go back to the terminal and come back to the Summary page. If your model shuts down, you can relaunch it from the Summary page at any time.
+
+When you arrive on the Summary page, there will be an upload bar. This is your model's changes being saved to Dockerhub. Please do not close the browser while the upload is in progress. However, **you must publish your model** to complete the registration process.
+
+Once the upload is complete and you have reviewed your model, **click the blue PUBLISH button** in the lower right to publish your model. This will open a dialog where you will have an opportunity to add a commit message. Any time you make changes to your model in Dojo, you will need to publish it as a a new version, so commit messages can be helpful to keep track of the changes from version to version.
+
+After successfully publishing, you will see a link to view your model on Causemos, and your model run on Dojo will be terminated. If you want to make any further changes, you will need to make a new version and publish it again.
+
+You can also view your model on Dockerhub at https://hub.docker.com/repository/docker/jataware/dojo-publish. You may need to expand the tags section.
