@@ -88,7 +88,7 @@ Steps to add a geographic coverage by building a bounding box:
  - Corner 1: The latitude and longitude of the northwest corner of your bounding box.
  - Corner 2: The latitude and longitude of the southeast corner of your bounding box.
   
-    >Note : Westerly longitudes and Southern latitudes are negative
+    >Note : Western longitudes and Southern latitudes are negative
   
 3. Select `ADD REGION TO MAP`
 
@@ -119,14 +119,14 @@ You will build your model image inside the model execution environment (a Docker
 ### Dojo Commands:
 Along with the Debian terminal commands you'll be able to execute in the virtual terminal as you configure your model, Dojo has a number of custom commands to help you register your model. You can type `dojo` at any time while in the terminal to bring up the helper text in the terminal, or view the [command cheatsheet](./cheatsheet.md).
 
+![Dojo Command](imgs/dojo-command.png)
+
 ### Configuration File Annotation
 If your model uses configuration files to set parameters or tunable knobs, you will need to annotate them in order to expose these parameters to Dojo end-users. Once the annotation window is launched, you can annotate each parameter and provide metadata.
 
 With Dojo, you can annotate any plain text/ascii configuration file, including `.txt`, `.yaml`, `.json`, `.xml`, etc. 
 
-Below is an example with details about each field following.
-
-![Edit Config](imgs/edit_config.png)
+![Edit Config](imgs/config-editor.png)
 
 To launch the config annotation window run (replace `<path_to_config_file.json>` with the appropriate file path and name):
 
@@ -147,6 +147,8 @@ To launch the config annotation window run (replace `<path_to_config_file.json>`
  - `Data Type`: Available options include nominal, ordinal, numerical, and freeform. Choose the appropriate data-type from the dropdown for your parameter.
  - `Allow users to change this value`: A checkbox option. If you would like to expose this parameter to the end-user, keep the box checked. If you only want to provide additional information about the parameter to enhance explainability, uncheck the box. The end-user will then not be able to change the value but will be able to view the details of the parameter.
  - `Save`: Select save when complete. You can also select cancel should you no longer want to annotate the parameter and your updates will not be saved.
+
+ ![Edited Config](imgs/config-edited.png)
 
 Repeat the above process for every applicable parameter value in your configuration file. Once complete, select save in the upper right-hand corner; this will save your annotated configuration file in Dojo. You may annotate multiple configuration files.
 
@@ -212,4 +214,4 @@ Once the upload is complete and you have reviewed your model, **click the blue P
 
 After successfully publishing, you will see a link to view your model on Causemos, and your model run on Dojo will be terminated. If you want to make any further changes, you will need to make a new version and publish it again.
 
-You can also view your model on Dockerhub at https://hub.docker.com/repository/docker/jataware/dojo-publish. You may need to expand the tags section.
+You can also view your model on [Dockerhub](https://hub.docker.com/repository/docker/jataware/dojo-publish). You may need to expand the tags section.
