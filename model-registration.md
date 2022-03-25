@@ -20,12 +20,13 @@ has_toc: true
 - [Overview](#overview)
 - [Model Metadata and Provenance](#model-metadata-and-provenance)
 - [Containerization and Execution](#containerization-and-execution)
-  - [Build your model](#build-your-model)
+  - [Building your model](#building-your-model)
   - [Dojo Commands](#dojo-commands)
   - [Configuration File Annotation](#configuration-file-annotation)
   - [Directive Annotation](#directive-annotation)
   - [Output File Annotation](#output-file-annotation)
   - [Completing the Registration](#completing-the-registration)
+  - [Summary Page and Publishing](#summary-page-and-publishing)
 
 
 ## Overview
@@ -155,16 +156,17 @@ Repeat the above process for every applicable parameter value in your configurat
 > Note: upon model execution, Dojo accepts parameter selections from end users and "rehydrates" the relevant config files with those parameter selections.
 
 ### Directive Annotation
-On the right-hand side of the terminal there is a section labeled 'Shell History' where your commands will appear as you enter them. Most entries will have a button to their right reading `MARK AS DIRECTIVE`. Click the button next to the appropriate model run command to launch an annotation window. Annotating the directive allows you to expose and describe parameters to the end-user.  Below is an example with details about each field following.
+On the right-hand side of the terminal there is a section labeled 'Shell History' where your commands will appear as you enter them. Most entries will have a button to their right reading `MARK AS DIRECTIVE`. Click the button next to the appropriate model run command to launch an annotation window. Annotating the directive allows you to expose and describe parameters to the end-user.
 
-![hi](imgs/edit_run_command.png)
+![Directive Select](imgs/directive-select)
 
 The same process applies to directive annotations as applied to [configuration annotation](#configuration-file-annotation).
+
+![Directive Edit](imgs/directive-edit)
 
 Repeat the annotation process for every applicable parameter value in your model execution directive. Once complete, select save in the upper right-hand corner; this will save your annotated directive in Dojo.
 
 > Note: your model can have only one directive. If running your model is a multi-step process, you must combine those steps into a single executable script or command.
-
 
 ### Output File Annotation
 Once your model has run, you will need to annotate your output file(s). This step provides the required metadata to geocode, associate, and format columns, and then convert your output to a Geotemporal dataset.
@@ -176,10 +178,6 @@ To launch the output file annotation tool, run (replace `<path_to_output_file.cs
 
 dojo annotate <path_to_output_file.csv>
 ```
-
-Below is a demonstration how to invoke the model output annotation interface:
-
-![hi](imgs/tag-data.png)
 
 For a detailed description on how to do this, please go to [Data Registration](./data-registration.md). Some of the form elements differ slightly from the data registration workflow, but the annotation process remains the same.
 
@@ -197,12 +195,13 @@ As a recap, before publishing your image, you should have:
 6. Annotated the model output file(s) to define the metadata, geocode, and transform your output to a Geotemporal dataset.
 7. Defined the location / directory of your output file(s). This is required in order to mount your model output and complete the geocoding and geotemporal transform of the results.
 
-If you have done all the above, you are ready to review your image for publication. Select `SAVE AND CONTINUE`.
+![Terminal Complete](imgs/terminal-complete.png)
 
+If you have done all the above, you are ready to review your image for publication. Select `SAVE AND CONTINUE`.
 
 If you want to discard the changes made to your model since launching the execution environment, you can instead select `ABANDON SESSION`. This will send you to the model's summary page. From the summary page you can relaunch the model to get back to the terminal/execution environment if you decide to make changes to the model in the future.
 
-## Summary Page & Publishing
+### Summary Page and Publishing
 
 This will take you to the Model Summary page, where you can review the model metadata, configuration files, output files, and other information before publishing it to Dockerhub. You can make changes to your model on this page while your model is running, either by clicking the 'EDIT' button on the Model Details or by clicking the Pencil icon on any of the model files or directive. You can also go back to the terminal with the 'Back to Terminal' button in the upper left.
 
@@ -210,8 +209,14 @@ This will take you to the Model Summary page, where you can review the model met
 
 When you arrive on the Summary page, there will be an upload bar. This is your model's changes being saved to Dockerhub. Please do not close the browser while the upload is in progress. However, **you must publish your model** to complete the registration process.
 
+![Summary Uploading](imgs/summary-uploading.png)
+
 Once the upload is complete and you have reviewed your model, **click the blue PUBLISH button** in the lower right to publish your model. This will open a dialog where you will have an opportunity to add a commit message. Any time you make changes to your model in Dojo, you will need to publish it as a a new version, so commit messages can be helpful to keep track of the changes from version to version.
 
+![Publish Dialog](imgs/publish-dialog.png)
+
 After successfully publishing, you will see a link to view your model on Causemos, and your model run on Dojo will be terminated. If you want to make any further changes, you will need to make a new version and publish it again.
+
+![Publish Confirmed](imgs/publish-confirmed.png)
 
 You can also view your model on [Dockerhub](https://hub.docker.com/repository/docker/jataware/dojo-publish). You may need to expand the tags section.
