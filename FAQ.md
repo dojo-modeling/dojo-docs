@@ -3,7 +3,9 @@
  **1. Will my model be a good fit for running in Dojo?**
  
  > To be a good fit for Dojo your model should be able to run in a Debian/Ubuntu based environment.
+
  > It is also useful, but not necessary, to make the most relevant input parameters perturbable before the model run which allows analysts to run “what-if” scenarios with your model.
+
  >  Another useful practice when preparing a model for dojo is to move all configuration settings to a configuration file.
 
  **2. Can I register Windows applications/models?**
