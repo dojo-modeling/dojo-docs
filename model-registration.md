@@ -158,11 +158,11 @@ Repeat the above process for every applicable parameter value in your configurat
 ### Directive Annotation
 On the right-hand side of the terminal there is a section labeled 'Shell History' where your commands will appear as you enter them. Most entries will have a button to their right reading `MARK AS DIRECTIVE`. Click the button next to the appropriate model run command to launch an annotation window. Annotating the directive allows you to expose and describe parameters to the end-user.
 
-![Directive Select](imgs/directive-select)
+![Directive Select](imgs/directive-select.png)
 
 The same process applies to directive annotations as applied to [configuration annotation](#configuration-file-annotation).
 
-![Directive Edit](imgs/directive-edit)
+![Directive Edit](imgs/directive-edit.png)
 
 Repeat the annotation process for every applicable parameter value in your model execution directive. Once complete, select save in the upper right-hand corner; this will save your annotated directive in Dojo.
 
