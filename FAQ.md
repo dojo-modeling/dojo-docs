@@ -21,7 +21,7 @@ It is possible to to use curl or wget to download data, or to do so directly in 
 
  **6. What if my code and/or model is not allowed to be shared with the
     public?**
-
+Hold off on registering the model until you talk with us. Dojo's current workflow will publish a public docker image of the model to dockerhub, so it would be possible for someone to access the code or data within that image. 
 
  **7. How do I cite Dojo in papers?**
 
@@ -33,4 +33,5 @@ Dojo utilizes a versioning system where once a model is published it becomes unc
 
 Dojo is language agnostic, as long as the resulting binaries or code can be executed in a Debian/Ubuntu based environment. During model registration modelers can install any required runtimes or libraries needed.
 
- **10. What data file formats and Dojo process?**
+ **10. What data file formats can Dojo process?**
+ Dojo supports excel, csv, geotiff, shapefiles, and netcdf output files.
