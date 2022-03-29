@@ -2,7 +2,7 @@
 
  **1. Will my model be a good fit for running in Dojo?**
  
-To be a good fit for Dojo
+ > To be a good fit for Dojo
 
  **2. Can I register Windows applications/models?**
 
