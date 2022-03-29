@@ -13,6 +13,8 @@
 > At this time, no, Windows applications cannot be registered in Dojo
 
  **3. What if my data doesn’t have a temporal or geospatial dimension?**
+ 
+ > Data should have temportal or a geospatial dimension. If the data is current you can add the current year to the data so it will fit with the required geotemporal format. 
 
  **4. Running my model requires X number of steps, but there’s only one
     directive, how can I make this work?**
@@ -28,6 +30,8 @@
 > Hold off on registering the model until you talk with us. Dojo's current workflow will publish a public docker image of the model to dockerhub, so it would be possible for someone to access the code or data within that image. 
 
  **7. How do I cite Dojo in papers?**
+ 
+ >Jataware (2022). Dojo: Dojo modeling is a repository for registering, storing, and running data-science models. Washington DC, United States. Available from: https://github.com/dojo-modeling/dojo.
 
  **8. What if I need to make changes to the model in the future?**
 
