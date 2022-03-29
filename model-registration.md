@@ -182,10 +182,10 @@ dojo annotate <path_to_output_file.csv>
 
 For a detailed description on how to do this, please go to [Data Registration](./data-registration.md). Some of the form elements differ slightly from the data registration workflow, but the annotation process remains the same.
 
-#### Editing or Deleting Existing Dojo Files
+### Editing or Deleting Existing Dojo Files
 Under the Shell History panel on the right hand side of the terminal, you'll find all your Dojo file metadata listed under three tabs (Configs, Outputs, and Accessories). If you want to edit (note: edit not available for Accessories) or delete any of these entries, you can click the pencil or trash icons on the relevant file card. You can also do this on the Summary page, which comes after you've clicked the 'Save and Continue' button at the bottom of this page.
 
-![Terminal Files](imgs/terminal-files)
+![Terminal Files](imgs/terminal-files.png)
 
 ### Completing the Registration
 When you have completed the above steps, you are ready to publish your model image to DockerHub. This image will be used downstream from the model registration process and allow end-users to change exposed parameters, run the updated model, and then inspect and conduct analyses with the results.
