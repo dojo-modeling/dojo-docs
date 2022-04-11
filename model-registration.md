@@ -229,7 +229,7 @@ After successfully publishing, you will see a link to view your model on Causemo
 You can also view your model on [Dockerhub](https://hub.docker.com/repository/docker/jataware/dojo-publish). You may need to expand the tags section.
 
 
-### Video Walkthrough
+## Video Walkthrough
 
 The video below provides a full demonstration of registering a model in Dojo from start to finish.
 
