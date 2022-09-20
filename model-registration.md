@@ -124,20 +124,19 @@ Along with the Linux terminal commands you'll be able to execute in the virtual 
 ![Dojo Command](imgs/dojo-command.png)
 
 ### Configuration File Annotation
-If your model uses configuration files to set parameters or tunable knobs, you will need to annotate them in order to expose these parameters to Dojo end-users. Once the annotation window is launched, you can annotate each parameter and provide metadata.
+If your model uses configuration files to set parameters or tunable knobs, you will need to annotate them in order to expose these parameters to Dojo end-users. Once the configuration file parameter templater tool is launched, you can annotate each parameter and provide metadata.
 
 With Dojo, you can annotate any plain text/ascii configuration file, including `.txt`, `.yaml`, `.json`, `.xml`, etc. 
 
-![Edit Config](imgs/config-editor.png)
+![Parameter Templater Tool](imgs/templater-highlight.png)
 
-To launch the config annotation window run (replace `<path_to_config_file.json>` with the appropriate file path and name):
-
+To launch the parameter templater tool, run (replace `<path_to_config_file.json>` with the appropriate file path and name):
 
   ```
   dojo config <path_to_config_file.json>
   ```
 
-1. Selecting your parameter. Only highlight the parameters you wish to expose to the end-user. After highlighting _only the parameter value you wish to expose_ (i.e. do not highlight the quotes of strings or the variable name), Dojo will launch an annotation window to describe your parameter.
+1. Selecting your parameter. Only highlight the parameters you wish to expose to the end-user. After highlighting _only the parameter value you wish to expose_ (i.e. do not highlight the quotes of strings or the variable name), Dojo will launch an annotation sidebar to describe your parameter.
 2. Available fields:
  - `Name`: The natural language name that you want to call your parameter; string only, spaces are allowed.
  - `Description`: As with your model description, the parameter description should be detailed. The end-user will rely on this description to gain an understanding of the parameter. Make sure to include examples alongside explanations if using non-standard formats. For example, explain that choosing input Parameter A requires the end-user to select a subset from input Parameter B.
@@ -147,10 +146,18 @@ To launch the config annotation window run (replace `<path_to_config_file.json>`
  - `Unit`: Required if applicable to your parameter. There is a field below to describe the unit, so here simply enter the units such as KG/HA or kilograms per hectare.
  - `Unit Description`: Add detail here to fully explain the parameter's unit. For example, kilograms of crop produced per hectare during the rainy season.
  - `Data Type`: Available options include nominal, ordinal, numerical, and freeform. Choose the appropriate data-type from the dropdown for your parameter.
- - `Allow users to change this value`: A checkbox option. If you would like to expose this parameter to the end-user, keep the box checked. If you only want to provide additional information about the parameter to enhance explainability, uncheck the box. The end-user will then not be able to change the value but will be able to view the details of the parameter.
  - `Save`: Select save when complete. You can also select cancel should you no longer want to annotate the parameter and your updates will not be saved.
+ - `Delete Parameter`: If you are editing a previously saved parameter, there will also be an option to delete the parameter. This option will not appear unless the parameter has already been saved to the config template.
 
- ![Edited Config](imgs/config-edited.png)
+![Templater Editor Open](imgs/templater-annotation-panel.png)
+
+ You can also edit or move existing annotated parameters by hovering your mouse over the highlight and clicking on one of the two buttons.
+
+![Templater Tooltip](imgs/templater-tooltip.png)
+
+Once you have parameters saved to your configuration file, you can view a list of all of your current parameters by clicking the `View All Parameters` button.
+
+ ![View All Parameters](imgs/templater-all-parameters.png)
 
 Repeat the above process for every applicable parameter value in your configuration file. Once complete, select save in the upper right-hand corner; this will save your annotated configuration file in Dojo. You may annotate multiple configuration files.
 
