@@ -160,6 +160,12 @@ To set `Event Type` as a _qualifier_ for `fatalities` the user should check the 
 
 > Note: you should only _qualify_ other features, not `Geo` or `Date` information since those are inherently dataset qualifiers. This avoids "qualifying a qualifier."
 
+## Feature Statistics
+
+The feature annotation tab includes a statistics tab. A basic distribution of the column is provided along with a few other key metrics. This allows the user to ensure the quality of the data being annotated.
+
+![Stats](imgs/stats.png)
+
 ## Transforming the dataset
 
 When you have completed annotating your dataset you should have at least one feature annotated as well as a primary geography and date. If no primary `Date` or `Geo` information was provided, we do our best to identify what _might_ have been `primary` based on the user's annotations.
