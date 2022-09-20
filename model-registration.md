@@ -166,13 +166,15 @@ Repeat the above process for every applicable parameter value in your configurat
 ### Directive Annotation
 On the right-hand side of the terminal there is a section labeled 'Shell History' where your commands will appear as you enter them. Most entries will have a button to their right reading `MARK AS DIRECTIVE`. Click the button next to the appropriate model run command to launch an annotation window. Annotating the directive allows you to expose and describe parameters to the end-user.
 
-![Directive Select](imgs/directive-select.png)
+![Directive Select](imgs/terminal-selecting-directive.png)
 
 The same process applies to directive annotations as applied to [configuration annotation](#configuration-file-annotation).
 
-![Directive Edit](imgs/directive-edit.png)
+![Directive With Parameter](imgs/directive-with-parameter.png)
 
-Repeat the annotation process for every applicable parameter value in your model execution directive. Once complete, select save in the upper right-hand corner; this will save your annotated directive in Dojo.
+Repeat the annotation process for every applicable parameter value in your model execution directive. Once complete, select save in the upper right-hand corner; this will save your annotated directive in Dojo. It will then appear in the Model Execution Directive panel on the right side of the terminal and the left of the model summary page.
+
+![Terminal with Directive](imgs/terminal-with-directive.png)
 
 > Note: your model can have only one directive. If running your model is a multi-step process, you must combine those steps into a single executable script or command.
 
@@ -192,7 +194,7 @@ For a detailed description on how to do this, please go to [Data Registration](.
 ### Editing or Deleting Existing Dojo Files
 Under the Shell History panel on the right hand side of the terminal, you'll find all your Dojo file metadata listed under three tabs (Configs, Outputs, and Accessories). If you want to edit (note: edit not available for Accessories) or delete any of these entries, you can click the pencil or trash icons on the relevant file card. You can also do this on the Summary page, which comes after you've clicked the 'Save and Continue' button at the bottom of this page.
 
-![Terminal Files](imgs/terminal-files.png)
+![Terminal Edit File](imgs/terminal-edit-file.png)
 
 ### Completing the Registration
 When you have completed the above steps, you are ready to publish your model image to DockerHub. This image will be used downstream from the model registration process and allow end-users to change exposed parameters, run the updated model, and then inspect and conduct analyses with the results.
