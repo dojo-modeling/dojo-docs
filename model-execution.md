@@ -8,12 +8,12 @@ has_toc: true
 
 # Model Execution
 
-Dojo offers a both command-line interface library and web interface solution for black box domain model execution. 
+Dojo offers both a command-line interface library and web interface solution for black box domain model execution.
 
 ## Quick Execution through Browser
 
 To start a run, navigate to the summary page for the model and select the **Create Model Run** button.
-A form pre-populated with the default parameters will pop up. After has made the desired modifications
+A form pre-populated with the default parameters will pop up. After you have made the desired modifications
 to the parameters, the model run can be submitted with the button on the bottom left.
 
 ![Create Run](imgs/model-run-form.png)
