@@ -162,7 +162,14 @@ To set `Event Type` as a _qualifier_ for `fatalities` the user should check the 
 
 ## Feature Statistics
 
-The feature annotation tab includes a statistics tab. A basic distribution of the column is provided along with a few other key metrics. This allows the user to ensure the quality of the data being annotated.
+The feature annotation component includes a statistics tab. When expanded, this tab provides a variety of descriptive statistics about the feature including:
+
+* the distribution of the feature (via a histogram)
+* count
+* min, median, max as well as percentiles
+* for string features, the mode is provided
+
+These statistics are intended to provide the user the ability to perform quality checks of the data they are annotating.
 
 ![Stats](imgs/stats.png)
 
