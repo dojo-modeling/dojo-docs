@@ -125,20 +125,19 @@ Along with the Linux terminal commands you'll be able to execute in the virtual 
 ![Dojo Command](imgs/dojo-command.png)
 
 ### Configuration File Annotation
-If your model uses configuration files to set parameters or tunable knobs, you will need to annotate them in order to expose these parameters to Dojo end-users. Once the annotation window is launched, you can annotate each parameter and provide metadata.
+If your model uses configuration files to set parameters or tunable knobs, you will need to annotate them in order to expose these parameters to Dojo end-users. Once the configuration file parameter templater tool is launched, you can annotate each parameter and provide metadata.
 
 With Dojo, you can annotate any plain text/ascii configuration file, including `.txt`, `.yaml`, `.json`, `.xml`, etc. 
 
-![Edit Config](imgs/config-editor.png)
+![Parameter Templater Tool](imgs/templater-highlight.png)
 
-To launch the config annotation window run (replace `<path_to_config_file.json>` with the appropriate file path and name):
-
+To launch the parameter templater tool, run (replace `<path_to_config_file.json>` with the appropriate file path and name):
 
   ```
   dojo config <path_to_config_file.json>
   ```
 
-1. Selecting your parameter. Only highlight the parameters you wish to expose to the end-user. After highlighting _only the parameter value you wish to expose_ (i.e. do not highlight the quotes of strings or the variable name), Dojo will launch an annotation window to describe your parameter.
+1. Selecting your parameter. Only highlight the parameters you wish to expose to the end-user. After highlighting _only the parameter value you wish to expose_ (i.e. do not highlight the quotes of strings or the variable name), Dojo will launch an annotation sidebar to describe your parameter.
 2. Available fields:
  - `Name`: The natural language name that you want to call your parameter; string only, spaces are allowed.
  - `Description`: As with your model description, the parameter description should be detailed. The end-user will rely on this description to gain an understanding of the parameter. Make sure to include examples alongside explanations if using non-standard formats. For example, explain that choosing input Parameter A requires the end-user to select a subset from input Parameter B.
@@ -148,10 +147,18 @@ To launch the config annotation window run (replace `<path_to_config_file.json>`
  - `Unit`: Required if applicable to your parameter. There is a field below to describe the unit, so here simply enter the units such as KG/HA or kilograms per hectare.
  - `Unit Description`: Add detail here to fully explain the parameter's unit. For example, kilograms of crop produced per hectare during the rainy season.
  - `Data Type`: Available options include nominal, ordinal, numerical, and freeform. Choose the appropriate data-type from the dropdown for your parameter.
- - `Allow users to change this value`: A checkbox option. If you would like to expose this parameter to the end-user, keep the box checked. If you only want to provide additional information about the parameter to enhance explainability, uncheck the box. The end-user will then not be able to change the value but will be able to view the details of the parameter.
  - `Save`: Select save when complete. You can also select cancel should you no longer want to annotate the parameter and your updates will not be saved.
+ - `Delete Parameter`: If you are editing a previously saved parameter, there will also be an option to delete the parameter. This option will not appear unless the parameter has already been saved to the config template.
 
- ![Edited Config](imgs/config-edited.png)
+![Templater Editor Open](imgs/templater-annotation-panel.png)
+
+ You can also edit or move existing annotated parameters by hovering your mouse over the highlight and clicking on one of the two buttons.
+
+![Templater Tooltip](imgs/templater-tooltip.png)
+
+Once you have parameters saved to your configuration file, you can view a list of all of your current parameters by clicking the `View All Parameters` button.
+
+ ![View All Parameters](imgs/templater-all-parameters.png)
 
 Repeat the above process for every applicable parameter value in your configuration file. Once complete, select save in the upper right-hand corner; this will save your annotated configuration file in Dojo. You may annotate multiple configuration files.
 
@@ -160,13 +167,15 @@ Repeat the above process for every applicable parameter value in your configurat
 ### Directive Annotation
 On the right-hand side of the terminal there is a section labeled 'Shell History' where your commands will appear as you enter them. Most entries will have a button to their right reading `MARK AS DIRECTIVE`. Click the button next to the appropriate model run command to launch an annotation window. Annotating the directive allows you to expose and describe parameters to the end-user.
 
-![Directive Select](imgs/directive-select.png)
+![Directive Select](imgs/terminal-selecting-directive.png)
 
 The same process applies to directive annotations as applied to [configuration annotation](#configuration-file-annotation).
 
-![Directive Edit](imgs/directive-edit.png)
+![Directive With Parameter](imgs/directive-with-parameter.png)
 
-Repeat the annotation process for every applicable parameter value in your model execution directive. Once complete, select save in the upper right-hand corner; this will save your annotated directive in Dojo.
+Repeat the annotation process for every applicable parameter value in your model execution directive. Once complete, select save in the upper right-hand corner; this will save your annotated directive in Dojo. It will then appear in the Model Execution Directive panel on the right side of the terminal and the left of the model summary page.
+
+![Terminal with Directive](imgs/terminal-with-directive.png)
 
 > Note: your model can have only one directive. If running your model is a multi-step process, you must combine those steps into a single executable script or command.
 
@@ -186,8 +195,7 @@ For a detailed description on how to do this, please go to [Data Registration](.
 ### Editing or Deleting Existing Dojo Files
 Under the Shell History panel on the right hand side of the terminal, you'll find all your Dojo file metadata listed under three tabs (Configs, Outputs, and Accessories). If you want to edit (note: edit not available for Accessories) or delete any of these entries, you can click the pencil or trash icons on the relevant file card. You can also do this on the Summary page, which comes after you've clicked the 'Save and Continue' button at the bottom of this page.
 
-![Terminal Files](imgs/terminal-files.png)
-
+![Terminal Edit File](imgs/terminal-edit-file.png)
 
 ### Completing the Registration
 When you have completed the above steps, you are ready to publish your model image to DockerHub. This image will be used downstream from the model registration process and allow end-users to change exposed parameters, run the updated model, and then inspect and conduct analyses with the results.

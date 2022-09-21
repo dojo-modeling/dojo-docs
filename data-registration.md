@@ -90,7 +90,7 @@ In the below example, the user annotates the "Year" column.
 
 ![Pre-Annotation](imgs/year.png)
 
-Note how the sample table at the left of the page is highlighted <span style="color:green">**green**</span>? That is because we have automatically detected a valid date format of `%Y` for this column. Date formats are defined using the [strftime](https://strftime.org/) reference. Please refer to it for questions about how to correct or update the date format for a column. Generally, our column analysis process can correctly assign a date format, but periodically the user must update or correct this with an appropriate formatter. For example `2020-02-01` would have the date format `%Y-%m-%d` but `Februrary 1, 2020` would be `%B %-d, %Y`.
+For date columns, the format is automatically detected Date formats are defined using the [strftime](https://strftime.org/) reference. Please refer to it for questions about how to correct or update the date format for a column. Generally, our column analysis process can correctly assign a date format, but periodically the user must update or correct this with an appropriate formatter. For example `2020-02-01` would have the date format `%Y-%m-%d` but `Februrary 1, 2020` would be `%B %-d, %Y`.
 
 If the date formatter is incorrect the column preview will turn <span style="color:red">**red**</span> until the user has corrected it.
 
@@ -159,6 +159,19 @@ Many datasets contain features that _qualify_ other features. For example, in a 
 To set `Event Type` as a _qualifier_ for `fatalities` the user should check the box indicating that `this field qualifies another`. The user should then select the relevant columns that the current feature qualifies. One field may qualify many features; in this case select all relevant features that the field of interest qualifies.
 
 > Note: you should only _qualify_ other features, not `Geo` or `Date` information since those are inherently dataset qualifiers. This avoids "qualifying a qualifier."
+
+## Feature Statistics
+
+The feature annotation component includes a statistics tab. When expanded, this tab provides a variety of descriptive statistics about the feature including:
+
+* the distribution of the feature (via a histogram)
+* count
+* min, median, max as well as percentiles
+* for string features, the mode is provided
+
+These statistics are intended to provide the user the ability to perform quality checks of the data they are annotating.
+
+![Stats](imgs/stats.png)
 
 ## Transforming the dataset
 
