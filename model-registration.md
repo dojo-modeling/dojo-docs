@@ -28,6 +28,7 @@ has_toc: true
   - [Output File Annotation](#output-file-annotation)
   - [Completing the Registration](#completing-the-registration)
   - [Summary Page and Publishing](#summary-page-and-publishing)
+- [Video Walkthrough](#video-walkthrough)
 
 
 ## Overview
@@ -234,3 +235,10 @@ After successfully publishing, you will see a link to view your model on Causemo
 ![Publish Confirmed](imgs/publish-confirmed.png)
 
 You can also view your model on [Dockerhub](https://hub.docker.com/repository/docker/jataware/dojo-publish). You may need to expand the tags section.
+
+
+## Video Walkthrough
+
+The video below provides a full demonstration of registering a model in Dojo from start to finish.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/stvtNUrEKDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
