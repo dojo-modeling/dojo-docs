@@ -32,14 +32,14 @@ has_toc: true
 
 ## Getting started
 
-The data registration workflow currently support registering 4 data types:
+The data registration workflow currently supports 4 data types:
 
 * CSV
 * Excel
 * NetCDF
 * GeoTIFF
 
-You may begin by navigating to [dojo-modeling.com](https://dojo-modeling.com) and selecting Data registration. Please reach out to [dojo@jataware.com](mailto:dojo@jataware.com) for credentials or help with the application. From there you will be asked for basic metadata about your dataset.
+You can register a dataset by clicking the Register a Dataset link on the Dojo landing page or above the list of all existing datasets. Please reach out to [dojo@jataware.com](mailto:dojo@jataware.com) for credentials or help with the application. From there you will be asked for basic metadata about your dataset.
 
 > Please provide as much information as possible throughout the data registration process to ensure that sufficient information is available to end-users of your dataset.
 
@@ -106,7 +106,7 @@ The user can then select the relevant year, month and day columns as well as ens
 
 Generally speaking, if a dataset has latitude and longitude in it we should annotate this and ignore the other geospatial information (unless they are [qualifiers](#qualifiers)) as this is the most granular location information available and can be used to geocode the remainder of the dataset.
 
-However, latitude and longitude are not typically contained in the same column. So, we provide a mechanism for the user to associate a `latitude` with a `longitude` and vice versa. To do this, you indicate that the column `is part of a coordinate pair` and choose it's partner from the dropdown.
+However, latitude and longitude are not typically contained in the same column. So, we provide a mechanism for the user to associate a `latitude` with a `longitude` and vice versa. To do this, you indicate that the column `is part of a coordinate pair` and choose its partner from the dropdown.
 
 ![Coordinate pair](imgs/coordinate-pair.png)
 
@@ -173,9 +173,62 @@ These statistics are intended to provide the user the ability to perform quality
 
 ![Stats](imgs/stats.png)
 
-## Transforming the dataset
+## Manual Data Transformations
 
-When you have completed annotating your dataset you should have at least one feature annotated as well as a primary geography and date. If no primary `Date` or `Geo` information was provided, we do our best to identify what _might_ have been `primary` based on the user's annotations.
+Before we process your dataset, you have the opportunity to pare down the data with our manual Data Transformations step. Some large datasets may take a long time in the processing step, so if some of the information contained is not relevant (e.g. the dataset covers 1990-2020, and you are only concerned with 2000-2020), you can use our transformation tools to do a few select adjustments to speed up the process. You can choose to do as many or as few of these as you'd like.
+
+![Transform data](img/transform-data.png)
+
+For each transformation, after you've made your selections, you'll be able to preview what effect your changes will have on the dataset with the Preview panel under the tool. Make your changes and the **Preview** button should become enabled (except in the case of Temporal Coverage, where you'll need to click 'Crop Coverage' before the Preview button will work).
+
+![Transformation preview](img/transformation-preview.png)
+
+None of the changes in the transformation panels will take effect until you click **NEXT** at the bottom of the page.
+
+If your dataset meets certain qualifications, you can do the following:
+
+#### Adjust Geospatial Resolution
+
+If your dataset has uniform geospatial data, you can use this tool to expand the geospatial resolution. You will also need to select one of the following aggregation functions:
+
+* Conservative: Conservative remapping, suitable for preserving the total value of the field (e.g., mass, population, water fluxes).
+* Sum: Sum remapping, suitable for fields representing accumulated quantities (e.g., precipitation, snowfall, radiation fluxes).
+* Minimum: Minimum remapping, suitable for fields where you want to preserve the minimum value within an area (e.g., minimum temperature, lowest pressure).
+* Maximum: Maximum remapping, suitable for fields where you want to preserve the maximum value within an area (e.g., peak wind speeds, maximum temperature).
+* Median: Median remapping, suitable for fields where you want to preserve the central tendency of the data, while being less sensitive to extreme values (e.g., median income, median precipitation).
+* Average: Average remapping, suitable for fields representing average quantities (e.g., temperature, humidity, wind speed).
+* Bilinear: Bilinear interpolation, suitable for smooth fields (e.g., temperature, pressure, geopotential height).
+* Bicubic: Bicubic interpolation, suitable for smooth fields with higher-order accuracy (e.g., temperature, pressure, geopotential height).
+* Nearest Neighbor: Nearest neighbor remapping, suitable for categorical data (e.g., land use types, soil types, vegetation types).
+
+#### Select Geospatial Coverage
+
+With this tool you can draw shapes on a map to clip your geospatial data.
+
+#### Adjust Temporal Coverage
+
+If your dataset has uniform temporal coverage, this tool can change the temporal resolution (e.g. from day to weekly). Similar to geospatial resolution, you will need to select one of the following aggregation functions:
+
+* Count
+* Size
+* Sum
+* Mean
+* Std
+* Var
+* Sem
+* Min
+* Max
+* First
+* Last
+
+#### Select Temporal Coverage
+
+This tool allows you to select new start and end dates to crop the time that your dataset covers.
+
+
+## Processing the dataset
+
+When you have finished annotating your dataset you should have at least one feature annotated as well as a primary geography and date. If no primary `Date` or `Geo` information was provided, we do our best to identify what _might_ have been `primary` based on the user's annotations.
 
 We then transform the dataset into a ready-to-use format. This process may take some time, depending on what is required. If the dataset is quite large and requires reverse geocoding latitude and longitudes into admin 0 through 3 (using GADM) it could take up to a few minutes.
 
