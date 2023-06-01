@@ -187,7 +187,7 @@ None of the changes in the transformation panels will take effect until you clic
 
 If your dataset meets certain qualifications, you can do the following:
 
-#### Adjust Geospatial Resolution
+### Adjust Geospatial Resolution
 
 If your dataset has uniform geospatial data, you can use this tool to expand the geospatial resolution. You will also need to select one of the following aggregation functions:
 
@@ -201,11 +201,11 @@ If your dataset has uniform geospatial data, you can use this tool to expand the
 * Bicubic: Bicubic interpolation, suitable for smooth fields with higher-order accuracy (e.g., temperature, pressure, geopotential height).
 * Nearest Neighbor: Nearest neighbor remapping, suitable for categorical data (e.g., land use types, soil types, vegetation types).
 
-#### Select Geospatial Coverage
+### Select Geospatial Coverage
 
 With this tool you can draw shapes on a map to clip your geospatial data.
 
-#### Adjust Temporal Coverage
+### Adjust Temporal Coverage
 
 If your dataset has uniform temporal coverage, this tool can change the temporal resolution (e.g. from day to weekly). Similar to geospatial resolution, you will need to select one of the following aggregation functions:
 
@@ -221,7 +221,7 @@ If your dataset has uniform temporal coverage, this tool can change the temporal
 * First
 * Last
 
-#### Select Temporal Coverage
+### Select Temporal Coverage
 
 This tool allows you to select new start and end dates to crop the time that your dataset covers.
 
