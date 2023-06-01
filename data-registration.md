@@ -175,7 +175,7 @@ These statistics are intended to provide the user the ability to perform quality
 
 ## Manual Data Transformations
 
-Before we process your dataset, you have the opportunity to pare down the data with our manual Data Transformations step. Some large datasets may take a long time in the processing step, so if some of the information contained is not relevant (e.g. the dataset covers 1990-2020, and you are only concerned with 2000-2020), you can use our transformation tools to do a few select adjustments to speed up the process. You can choose to do as many or as few of these as you'd like.
+Before we process your dataset, you can pare down your data with our manual Data Transformations step. Some large datasets may take a long time in the processing step, so if some of the information contained is not relevant (e.g. the dataset covers 1990-2020, and you are only concerned with 2000-2020), you can use our transformation tools to do a few select adjustments to speed up the process. You can choose to do as many or as few of these as you'd like.
 
 ![Transform data](imgs/transform-data.png)
 
