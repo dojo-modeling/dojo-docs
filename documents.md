@@ -31,4 +31,4 @@ The search bar above the table performs a semantic search, which means it attemp
 
 As with the basic table before the search, if you click on any of the search results, you will see the full details of the PDF.
 
-![Document Explorer Search](imgs/document-explorer-table.png)
+![Document Explorer Search](imgs/document-explorer-search.png)
