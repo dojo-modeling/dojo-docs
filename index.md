@@ -13,15 +13,15 @@ Dojo ([https://github.com/dojo-modeling](https://github.com/dojo-modeling)) is a
 
 ##### Register and Execute Models
 
-Modelers can register their models using Dojo's intuitive web based terminal emulator. Models can be executed via a standardized, expressive API by wrapping heterogenous models into a consistent interface for parameterization and transforming model outputs into a consistent, easy to consume format. Dojo models facilitate reproducible research by enabling modelers to containerize and share their models with guarantees that the model will perform as they expect outside their own compute environment.
+    Modelers can register their models using Dojo's intuitive web based terminal emulator. Models can be executed via a standardized, expressive API by wrapping heterogenous models into a consistent interface for parameterization and transforming model outputs into a consistent, easy to consume format. Dojo models facilitate reproducible research by enabling modelers to containerize and share their models with guarantees that the model will perform as they expect outside their own compute environment.
 
 ##### Register and Transform Datasets
 
-Dojo provides a mechanism for analysts and domain experts to register and transform datasets for use in downstream modeling workflows.
+    Dojo provides a mechanism for analysts and domain experts to register and transform datasets for use in downstream modeling workflows.
 
 ##### Upload and Search Documents
 
-Dojo also includes a document uploader and explorer, which is a means to manage an organization’s knowledge and leverage it inside index model analysis workflows. Users can upload PDFs that are relevant to their analysis in order to surface them as evidence during the creation of an index model. Dojo offers a semantic search capability over these documents which unlocks the ability to discover information across thousands of PDF documents with ease.
+    Dojo also includes a document uploader and explorer, which is a means to manage an organization’s knowledge and leverage it inside index model analysis workflows. Users can upload PDFs that are relevant to their analysis in order to surface them as evidence during the creation of an index model. Dojo offers a semantic search capability over these documents which unlocks the ability to discover information across thousands of PDF documents with ease.
 
 ![Landing Page](imgs/landing-page.png)
 
