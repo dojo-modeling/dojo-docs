@@ -2,8 +2,6 @@
 layout: default
 title: Documents
 nav_order: 5
-has_children: true
-has_toc: true
 ---
 
 # Documents
@@ -14,13 +12,13 @@ You can access the Document Uploader by clicking the `Document Explorer` link on
 
 The Document Uploader allows you to upload PDFs to Dojo so that they can then be processed for future searching in the Document Explorer. It uses a simple drag and drop or file explorer interface to upload up to 10 files at a time.
 
-[Document Explorer Upload](imgs/document-explorer-upload.png)
+![Document Explorer Upload](imgs/document-explorer-upload.png)
 
 Once you've selected your files, you can annotate the metadata for each of your PDFs. Dojo may infer some of the metadata from the files themselves, but you can change these generated fields as you go through your annotations.
 
 After you're done with your annotations, click `Upload All` to complete the upload process.
 
-[Document Explorer Annotate](imgs/document-explorer-annotate.png)
+![Document Explorer Annotate](imgs/document-explorer-annotate.png)
 
 
 ## Document Explorer
