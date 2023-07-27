@@ -160,6 +160,24 @@ To set `Event Type` as a _qualifier_ for `fatalities` the user should check the 
 
 > Note: you should only _qualify_ other features, not `Geo` or `Date` information since those are inherently dataset qualifiers. This avoids "qualifying a qualifier."
 
+### Add Alias
+
+The "Add Alias" feature allows you to replace specific cell values within your selected column. This tool enhances `Feature` data - data that is not `Geo` or `Date` - to help provide more consistent representation after the dataset has been processed.
+
+![Add Alias](imgs/dataset-add-alias.png)
+
+First, click the blue 'Add Alias' button. Then you'll see the Current and New value fields. Both fields are required to save the alias, or you'll have to remove the partially completed alias before you can save your annotation.
+
+* Current Value: The original cell value.
+* New Value: The value that will replace the current one.
+
+For example, if your dataset includes a column with values like 'undefined', 'N/A', or 'null', these can be substituted:
+
+* Current: undefined
+* New: 0
+
+Here, all 'undefined' values will be replaced with '0'.
+
 ## Feature Statistics
 
 The feature annotation component includes a statistics tab. When expanded, this tab provides a variety of descriptive statistics about the feature including:
