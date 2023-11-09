@@ -56,4 +56,4 @@ Below the list of nodes on the right side of the screen, you'll find two inputs 
 ### Processing
 Once you're done setting up your graph, click the `PROCESS` button to start running the backend process. When it's complete, you'll see a list of the datasets that the process output. 
 
-**PLEASE NOTE** It is important to make sure you have at least one Load Node
+**PLEASE NOTE** It is important to make sure you have at least one Load Node with a feature selected. Also ensure that all the nodes in your graph are connected before hitting process.
