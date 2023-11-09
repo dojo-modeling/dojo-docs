@@ -22,7 +22,12 @@ You can select as many datasets as you'd like. Once you've selected all your dat
 On the second step, you now have to start building out your graph. Drag and drop the different nodes referenced below from the list of nodes on the right side of the screen onto the dotted surface that covers the majority of the screen. Click on the small circles at the bottom/top of each node, then move your mouse (with the line from the circle) to the circle at the bottom/top of the node you'd like to connect your selected node to. By adding nodes, described below, and connecting them together, you'll create a graph that will allow you to process data from multiple features into new dataset outputs.
 
 ### Nodes:
+
+![Node List](imgs/data-modeling-node-list.png)
+
 #### Load Node
+
+![Load Node](imgs/data-modeling-load-node.png)
 This starts with selecting Load Nodes. Each Load Node represents one feature from a dataset. You select this feature with the "Data Source" dropdown at the top of the node. You'll see features listed per dataset in this dropdown.
 
 Once you've selected a feature for a Load Node, you can choose to make it the Geo Resolution and/or the Time Resolution for your new dataset. You can only select each of these once in the entire graph, either in the Load Nodes or in the Time/Geo Resolution selectors in the sidebar.
