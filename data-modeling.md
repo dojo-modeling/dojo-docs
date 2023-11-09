@@ -11,7 +11,7 @@ With Dojo's Data Modeling tool, users can load features from NetCDF files into a
 
 ## Selecting NetCDFs
 
-When you initially land on the Data Modeling page, you'll be prompted to selected registered NetCDFs. If you have a NetCDF that you'd like to use that isn't yet registered in Dojo, follow the steps in [Data Registration](#data-registration) to register it. It will then appear in the list of NetCDF datasets.
+When you initially land on the Data Modeling page, you'll be prompted to selected registered NetCDFs. If you have a NetCDF that you'd like to use that isn't yet registered in Dojo, follow the steps in [Data Registration](./data-registration) to register it. It will then appear in the list of NetCDF datasets.
 
 You can select as many datasets as you'd like. Once you've selected all your datasets, click `USE THESE DATASETS` on the bottom of the page to move to the next step.
 
