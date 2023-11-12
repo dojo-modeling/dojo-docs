@@ -11,7 +11,7 @@ With Dojo's Data Modeling tool, users can combine NetCDF datasets together throu
 
 Relatively complex data operations and transformations can be performed on a variety of different kinds of data, no programming skills required.
 
-![Complex Example](imgs/data-modelings-complex-example.png)
+![Complex Example](imgs/data-modeling-complex-example.png)
 
 
 ## Selecting NetCDFs
