@@ -13,6 +13,7 @@ Relatively complex data operations and transformations can be performed on a var
 
 ![Complex Example](imgs/data-modelings-complex-example.png)
 
+
 ## Selecting NetCDFs
 
 When you initially land on the Data Modeling page, you'll be prompted to selected registered NetCDFs. If you have a NetCDF that you'd like to use that isn't yet registered in Dojo, follow the steps in [Data Registration](./data-registration) to register it. It will then appear in the list of NetCDF datasets.
@@ -21,13 +22,16 @@ You can select as many datasets as you'd like. Once you've selected all your dat
 
 ![Select NetCDFs](imgs/data-modeling-select-netcdfs.png)
 
+
 ## Building a graph
 
 ![Data Modeling Graph Editor](imgs/data-modeling-empty-canvas.png)
 
+
 On the second step, you can start building out your data graph. Drag and drop nodes (referenced below) from the node selection panel on the right side of the screen into the blank canvas area on the left. Once nodes are on the canvas, they will appear with small connection points on the top and/or bottom (inputs and outputs respectively). You can click and drag from the output connection points of one node to the input connection points of another node to apply operations to the data.
 
 ![Connecting Nodes](imgs/data-modeling-connecting-nodes.png)
+
 
 Adding multiple nodes and creating a network of connections between them defines how input data should be transformed by the data flow graph to create the derived output data.
 
@@ -35,9 +39,12 @@ Adding multiple nodes and creating a network of connections between them defines
 
 ![Node List](imgs/data-modeling-node-list.png)
 
+
 #### Load Node
 
 ![Load Node](imgs/data-modeling-load-node.png)
+
+
 This node type is how data is brought into the data modeling process. Each Load Node represents **one** feature from a dataset. You select this feature with the "Data Source" dropdown at the top of the node. You'll see features listed per dataset in this dropdown.
 
 Once you've selected a feature, there are some additional options relating to how data regridding is handled.
@@ -56,6 +63,8 @@ The second is selecting regridding methods that will be used if the data in the 
 
 #### Threshold Node
 ![Threshold Node](imgs/data-modeling-threshold-node.png)
+
+
 Threshold nodes are used to select specific portions of data where some condition is true.
 
 Take the example of a temperature dataset where you want to filter for values above a threshold temperature. A filter node that takes temperature data as input and is set to `greater_than` with the value of your threshold creates a boolean mask that is true wherever the condition was met. This can then be used to filter the original data with a [Join Node](#join-node).
@@ -65,6 +74,8 @@ Threshold values can be an integer or floating point number. The type of compari
 
 #### Join Node
 ![Join Node](imgs/data-modeling-join-node.png)
+
+
 Join nodes are used to combine multiple nodes in the graph into a single dataset. Join nodes take as input two parent nodes and output the values of those input nodes combined together. Under the hood, a join node multiplies the input datasets together.
 
 The most common use case for join nodes is to filter data to where some condition is true. A dataset mask can be created with a [Threshold Node](#threshold-node), and then that mask can be "joined" with the data that you want to apply the mask to.
@@ -74,11 +85,13 @@ Less commonly, depending on the particular data operations you are trying to do,
 #### Filter By Country Node 
 ![Filter By Country Node](imgs/data-modeling-filter-by-country-node.png)
 
+
 With this node you can filter the data coming out of your selected features by the countries you select in the dropdown. You can select multiple countries. The output dataset will be a copy of the input dataset, but with an extra `admin0` (i.e. country) dimension. Every country specified in the Filter By Country Node will be split into its own separate layer along the country dimension of the output. All other values not within the bounds of any of the specified countries will be set to `0`
 
 
 #### Reduce By Node
 ![Reduce By Node](imgs/data-modeling-reduce-by-node.png)
+
 
 This node can be used to aggregate a dataset across one or more dimensions. The input dataset will be `sum-reduced` along the dimensions specified by the checkboxes. For example, say you have monthly population data gridded to `0.1x0.1` lat/lon, and you would like to produce a single population curve over time. Using the Reduce By node, selecting `lat` and `lon` will sum up all of the values for each time slice in the input dataset, and produce a new dataset that is just a single aggregated curve over time.
 
@@ -87,10 +100,12 @@ This node can be used to aggregate a dataset across one or more dimensions. The 
 #### Save Node
 ![Save Node](imgs/data-modeling-save-node.png)
 
+
 The final step in a graph is adding a Save Node. The Save Node has input text fields for both name and description, which will be used to label the output dataset and save it back into Dojo as a new derived dataset.
 
 ### Manual Resolution
 ![Manual Resolution](imgs/data-modeling-manual-resolution.png)
+
 
 Below the list of nodes on the right side of the screen, you'll find two inputs where you can manually set your Geo or Time Resolution. You can use these instead of selecting one of your `Load Node` features to be Geo/Time Resolution if you want to set the resolution by hand. If you set it here, you won't be able to select any of the same type of Resolution elsewhere until you clear it.
 
