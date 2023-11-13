@@ -48,7 +48,7 @@ Adding multiple nodes and creating a network of connections between them defines
 
 The Load Node is how data is brought into the data modeling process. Each Load Node represents **one** feature from a dataset. You select this feature with the `Data Source` dropdown at the top of the node. You'll see features listed per dataset in this dropdown.
 
-The other options in the Load Node relate to to how data regridding is handled.
+The following options in the Load Node relate to how data regridding is handled.
 
 The first of these is a global target resolution that applies to all your features. You need to select both a geo and temporal target resolution. You can either manually hardcode these (see [Manual Resolution](#manual-resolution) below), or you can check one or both of the boxes on a Load Node to make its resolution be the target resolution. For the entire graph, you can only have one geo and one temporal target resolution, either in the Load Nodes or in the manual selectors in the sidebar.
 
