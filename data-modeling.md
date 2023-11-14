@@ -2,10 +2,27 @@
 layout: default
 title: Data Modeling
 nav_order: 4
+has_children: true
 has_toc: true
 ---
 
 # Data Modeling
+
+## Contents
+
+- [Selecting NetCDFs](#selecting-netCDFs)
+- [Building a Graph](#building-a-graph)
+- [Nodes](#nodes)
+  - [Load Node](#load-node)
+  - [Threshold Node](#threshold-node)
+  - [Join Node](#join-node)
+  - [Filter By Country Node](#filter-by-country-node)
+  - [Reduce By Node](#reduce-by-node)
+  - [Save Node](#save-node)
+- [Manual Resolution](#manual-resolution)
+- [Processing](#processing)
+
+## Introduction
 
 With Dojo's Data Modeling tool, users can combine NetCDF datasets together through a simple visual programming interface to create new and insightful derived datasets.
 
@@ -23,7 +40,7 @@ You can select as many datasets as you'd like. Once you've selected all your dat
 ![Select NetCDFs](imgs/data-modeling-select-netcdfs.png)
 
 
-## Building a graph
+## Building a Graph
 
 ![Data Modeling Graph Editor](imgs/data-modeling-empty-canvas.png)
 
@@ -77,7 +94,7 @@ Threshold values can be an integer or floating point number. The type of compari
 ![Join Node](imgs/data-modeling-join-node.png)
 
 
-Join Nodes are used to combine multiple nodes in the graph into a single dataset. Join Nodes take as input two parent nodes and output the values of those input nodes combined together. Under the hood, a Join node Nultiplies the input datasets together.
+Join Nodes are used to combine multiple nodes in the graph into a single dataset. Join Nodes take as input two parent nodes and output the values of those input nodes combined together. Under the hood, a Join Node multiplies the input datasets together.
 
 The most common use case for Join Nodes is to filter data to where some condition is true. A dataset mask can be created with a [Threshold Node](#threshold-node), and then that mask can be "joined" with the data that you want to apply the mask to.
 
