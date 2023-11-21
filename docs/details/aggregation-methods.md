@@ -6,9 +6,9 @@ parent: Data Modeling
 
 # Aggregation Methods for Data Modeling
 
-![Aggregation Functions](imgs/data-modeling-aggregation-functions.png)
+![Aggregation Functions](../imgs/data-modeling-aggregation-functions.png)
 
-In the Data Modeling [Load Nodes](./data-modeling.md#load-node), regridding methods need to be selected if the data is going to be geographically and/or temporally regridded. This is the list of options available in both the Geo and Time Aggregation dropdowns:
+In the Data Modeling [Load Nodes](../data-modeling#load-node), regridding methods need to be selected if the data is going to be geographically and/or temporally regridded. This is the list of options available in both the Geo and Time Aggregation dropdowns:
 
 - `conserve` - maintain the total sum of the data before and after (e.g. for regridding population)
 - `min` - take the minimum value from each bucket during regridding

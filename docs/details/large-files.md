@@ -2,7 +2,6 @@
 layout: default
 title: Uploading Large Files
 parent: Model Registration
-has_toc: true
 ---
 
 # Uploading Large Files

@@ -2,7 +2,6 @@
 layout: default
 title: CLI Commands
 parent: Model Execution
-has_toc: true
 ---
 
 # Dojo CLI commands

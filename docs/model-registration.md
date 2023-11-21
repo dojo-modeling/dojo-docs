@@ -120,7 +120,7 @@ You will build your model image inside the model execution environment (a Docker
 
 
 ### Dojo Commands:
-Along with the Linux terminal commands you'll be able to execute in the virtual terminal as you configure your model, Dojo has a number of custom commands to help you register your model. You can type `dojo` at any time while in the terminal to bring up the helper text in the terminal, or view the [command cheatsheet](./cheatsheet.md).
+Along with the Linux terminal commands you'll be able to execute in the virtual terminal as you configure your model, Dojo has a number of custom commands to help you register your model. You can type `dojo` at any time while in the terminal to bring up the helper text in the terminal, or view the [command cheatsheet](details/cheatsheet).
 
 ![Dojo Command](imgs/dojo-command.png)
 

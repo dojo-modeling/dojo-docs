@@ -2,7 +2,6 @@
 layout: default
 title: Jupyter Notebooks
 parent: Model Registration
-has_toc: true
 ---
 
 # Registering Jupyter Notebook Models in Dojo
@@ -11,7 +10,7 @@ To register a Jupyter notebook based model in Dojo we recommend installing [Pape
 
 If the parameters of the model are set in the notebook and modified manually for each run then you will need to expose those parameters by tagging a cell in the notebook. See next section.
 
-If the notebook reads in parameters from another file there is no need to tag anything in the notebook. Instead you will define those parameters using Dojo’s [Built-in "dojo" command](https://www.dojo-modeling.com/cheatsheet.html#dojo-terminal-commands) (specifically dojo config …) to tag the parameters. Dojo will handle updating that file before the notebook runs allowing that parameter to be exposed.
+If the notebook reads in parameters from another file there is no need to tag anything in the notebook. Instead you will define those parameters using Dojo’s [Built-in "dojo" command](./cheatsheet#dojo-terminal-commands) (specifically dojo config …) to tag the parameters. Dojo will handle updating that file before the notebook runs allowing that parameter to be exposed.
 
 ## Preparing your Notebook
 

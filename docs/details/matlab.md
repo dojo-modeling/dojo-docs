@@ -2,7 +2,6 @@
 layout: default
 title: MATLAB Models
 parent: Model Registration
-has_toc: true
 ---
 
 # Registering MATLAB Models in Dojo

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Dojo API
-nav_order: 6
+nav_order: 7
 has_toc: true
 ---
 
@@ -112,7 +112,7 @@ The population model serves as an ancillary tool to distribute, disaggregate yea
 
 ## Working with Model Results
 
-Model results are stored in the [Geotemporal format](./geotemporal-format.md). They can be interacted with conveniently using Python's Pandas library, or any other library used to process parquet. 
+Model results are stored in the [Geotemporal format](details/geotemporal-format). They can be interacted with conveniently using Python's Pandas library, or any other library used to process parquet.
 
 For example:
 
