@@ -2,7 +2,7 @@ theme: just-the-docs
 title: Dojo
 description: Dojo is a repository for registering, storing, and running data-science models.
 source: docs
-repository: adamgilg/dojo-docs
+repository: dojo-modeling/dojo-docs
 
 
 aux_links:
