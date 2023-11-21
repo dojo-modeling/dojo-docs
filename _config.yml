@@ -1,7 +1,7 @@
-remote_theme: pmarsceill/just-the-docs
+theme: just-the-docs
 title: Dojo
 description: Dojo is a repository for registering, storing, and running data-science models.
 
 aux_links:
   "View Dojo on GitHub":
-    - "//github.com/dojo-modeling"  
+    - "//github.com/dojo-modeling"
