@@ -1,9 +1,27 @@
- <div class="side-bar">
-  <div
-    class="site-header"
-    role="banner"
-
-  >
+ <div class="side-bar" style="background-color:#06B8EF; background-image:linear-gradient(to right, rgba(6, 184, 239, 1), rgba(161, 27, 218, 1));">
+  <style>
+    .side-bar .nav-list .nav-list-item .nav-list-link.active,
+    .side-bar .nav-list .nav-list-item .nav-list-link:hover,
+    .side-bar .nav-list .nav-list-item .nav-list-expander:hover,
+    .side-bar .site-header .site-title:hover {
+      background-image: none;
+      background-color: #C71585;
+    }
+    .side-bar a {
+      color: white;
+    }
+    .site-footer {
+      color: white;
+    }
+    svg { color: white; }
+/*    TODO: only do if I can also change the height/color of the search/site-button border
+      then give them reverse of same gradient
+*/
+/*    .site-header {
+      border-bottom: 4px solid white;
+    }*/
+  </style>
+  <div class="site-header" role="banner">
     <a href="{{ '/' | relative_url }}" class="site-title lh-tight">{% include title.html %}</a>
     <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
       <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
@@ -24,7 +42,7 @@
             <ul class="nav-list">
               {% for child in item.details %}
                 <li class="nav-list-item">
-                  <a href="{{ child.url | relative_url }}" class="nav-list-link">{{ child.title }}</a>
+                  <a href="{{ child.url | relative_url }}" class="nav-list-link" style="color:white;">{{ child.title }}</a>
                 </li>
               {% endfor %}
             </ul>
