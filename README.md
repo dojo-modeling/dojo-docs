@@ -1,6 +1,6 @@
 # Dojo Documentation
 
-This is a Jekyll App using the [JustTheDocs](https://github.com/just-the-docs/just-the-docs) theme. It is hosted with Github Pages.
+This is a Jekyll App using the [Just the Docs](https://github.com/just-the-docs/just-the-docs) theme. It is hosted with Github Pages.
 
 ## Running Locally
 
@@ -8,17 +8,8 @@ If you want to contribute to the documentation, the easiest way to do so is to r
 - `bundle install` to install dependencies
 - `bundle exec jekyll start -l` to run the server
 
-## Page Order
+## Adding New Pages
 
-If you want to add, remove, or change a top level page, you need to edit the `nav_order` in that page and all the subsequent pages. The current order of the pages is as follows:
-1. Home (index.md)
-2. Model Registration (model-registration.md)
-3. Data Registration (data-registration.md)
-4. Data Modeling (data-modeling.md)
-5. AI Assistant (ai-assistant.md)
-6.
-7. Dojo API (dojo-api.md)
-8. Documents (documents.md)
-9. Model Execution (model-execution.md)
-10. Frequently Asked Questions (FAQ.md)
+New top level pages go in `docs`. Child pages go in `docs/details`. Any new pages need to be added to the navigation structure in `docs/_data/navigation.yml` in order to show up in the sidebar. This is then rendered by `docs/_includes/components/sidebar.html`, which overrides the default Just the Docs sidebar.html. This is an alternative to the Just the Docs default of adding `nav_order` to the front matter block, as it allows us to much more easily see and change the nav order/structure.
 
+> Make sure to add new pages to `docs/_data/navigation.yml`

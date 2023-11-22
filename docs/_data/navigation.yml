@@ -1,0 +1,53 @@
+docs_list_title: ACME Documentation
+docs:
+
+- title: Home
+  url: index.html
+
+- title: Model Registration
+  url: model-registration.html
+  details:
+    - title: Cheatsheet
+      url: /details/cheatsheet.html
+    - title: Excel Models
+      url: /details/excel.html
+    - title: Jupyter Notebooks
+      url: /details/jupyter.html
+    - title: MATLAB Models
+      url: /details/matlab.html
+    - title: Prebuilt Containers
+      url: /details/docker.html
+    - title: Uploading Large Files
+      url: /details/large-files.html
+
+- title: Data Registration
+  url: data-registration.html
+  details:
+    - title: Geotemporal Format
+      url: /details/geotemporal-format.html
+    - title: Preparing Data for Dojo
+      url: /details/preparing-data-for-dojo.html
+
+- title: Data Modeling
+  url: data-modeling.html
+  details:
+    - title: Aggregation Methods
+      url: /details/aggregation-methods.html
+
+- title: AI Assistant
+  url: ai-assistant.html
+
+- title: Dojo API
+  url: dojo-api.html
+
+- title: Documents
+  url: documents.html
+
+- title: Model Execution
+  url: model-execution.html
+  details:
+    - title: Dojo CLI Commands
+      url: /details/dojo-cli.html
+
+- title: Frequently Asked Questions
+  url: frequently-asked-questions.html

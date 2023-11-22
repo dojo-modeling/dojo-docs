@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Dojo API
-nav_order: 7
 has_toc: true
 ---
 
