@@ -1,4 +1,10 @@
-## **Dojo / World modelers FAQ questions**
+---
+layout: default
+title: Frequently Asked Questions
+nav_order: 8
+---
+
+# Dojo / World Modelers FAQ
 
  **1. Will my model be a good fit for running in Dojo?**
  
