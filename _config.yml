@@ -4,7 +4,6 @@ description: Dojo is a repository for registering, storing, and running data-sci
 source: docs
 repository: dojo-modeling/dojo-docs
 
-
 aux_links:
   "View Dojo on GitHub":
     - "//github.com/dojo-modeling"
