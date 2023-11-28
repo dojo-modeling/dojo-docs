@@ -34,8 +34,8 @@ docs:
     - title: Aggregation Methods
       url: /details/aggregation-methods.html
 
-- title: AI Assistant
-  url: ai-assistant.html
+# - title: AI Assistant
+#   url: ai-assistant.html
 
 - title: Dojo API
   url: dojo-api.html
