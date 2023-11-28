@@ -23,7 +23,7 @@ There are three simple steps to tag parameters that are defined in the notebook:
 -   Tag the cell as “parameters” in whatever method Papermill recommends.
   
 <p align="center">
-    <img src="imgs/parameters.png" width="400" title="parameter"/> 
+    <img src="../imgs/parameters.png" width="400" title="parameter"/>
     <br/>
     <i>Parameters tag in Notebook</i>
 </p>

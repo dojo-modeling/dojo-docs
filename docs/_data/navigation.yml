@@ -26,7 +26,7 @@ docs:
     - title: Geotemporal Format
       url: /details/geotemporal-format.html
     - title: Preparing Data for Dojo
-      url: /details/preparing-data-for-dojo.html
+      url: /details/data-format.html
 
 - title: Data Modeling
   url: data-modeling.html
