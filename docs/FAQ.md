@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Frequently Asked Questions
-nav_order: 8
 ---
 
 # Dojo / World Modelers FAQ

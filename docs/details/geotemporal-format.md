@@ -2,7 +2,6 @@
 layout: default
 title: Geotemporal Format
 parent: Data Registration
-has_toc: true
 ---
 
 ## Geotemporal Format
@@ -35,7 +34,7 @@ The fixed columns are `[timestamp, country, admin1, admin2, admin3, lat, lng, fe
 
 Converting indicator datasets and model output is **THE GOAL** of the Dojo data pipeline. The above example is meant to illuminate in more detail the **target** format, but model output and indicator datasets are not expected to start in this format. 
 
-This example is available in [gzipped parquet here](/data/geotemporal_example_format.parquet.gzip).
+This example is available in [gzipped parquet here](../data/geotemporal_example_format.parquet.gzip).
 
 ### Date ranges
 
@@ -55,7 +54,7 @@ In some instances a model may have date data that represents a range of dates fo
 |    2016    |    2017   | Djibouti | 0.8        |
 |    2017    |    2018   | Djibouti | 0.9        |
 
-where one date would be marked as the `primary_date = True` and another would become a `feature` or `qualifier` column, as described in the [data registration document](./data-registration.md).
+where one date would be marked as the `primary_date = True` and another would become a `feature` or `qualifier` column, as described in the [data registration document](../data-registration).
 
 By convention, we expect that date ranges are represented by the first date of that range. For example, a date point representing the entire month of May, 2020 could be presented as `5/1/2020`. Alternatively, Dojo provides a mechanism for the user to "build a date" where `month` and `year` are in separate columns and there is no `day` column.
 

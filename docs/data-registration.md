@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Data Registration
-nav_order: 3
 has_children: true
 has_toc: true
 ---
@@ -62,7 +61,7 @@ Model Overview Form Field Definitions:
   - `Email`: The primary point of contact's e-mail address. If you have one, a group e-mail is also acceptable.
   - `Organization`: The organization that created the dataset. 
   - `Website`: This can be a link to your dataset's repository or another website that you may maintain that provides additional context about your data.
-  - `File`: See [preparing data for Dojo](./data-format.md)
+  - `File`: See [preparing data for Dojo](details/data-format)
 
 ## Geo and time inference
 

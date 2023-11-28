@@ -2,7 +2,6 @@
 layout: default
 title: Preparing data for Dojo
 parent: Data Registration
-has_toc: true
 ---
 
 # Preparing data for Dojo

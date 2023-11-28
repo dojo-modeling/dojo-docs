@@ -2,7 +2,6 @@
 layout: default
 title: Excel Models
 parent: Model Registration
-has_toc: true
 ---
 
 # Registering Excel Models in Dojo

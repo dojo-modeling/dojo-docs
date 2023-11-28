@@ -2,7 +2,6 @@
 layout: default
 title: Prebuilt Containers
 parent: Model Registration
-has_toc: true
 ---
 
 # Working with prebuilt containers

@@ -2,7 +2,6 @@
 layout: default
 title: Cheatsheet
 parent: Model Registration
-has_toc: true
 ---
 
 # Dojo Terminal commands
