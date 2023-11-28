@@ -28,7 +28,7 @@ These steps are described below in more detail.
 First, you must define the parameters or tunable knobs relied on by your model within your Excel workbook. Assume you have an Excel workbook with a sheet called `Parameters`:
 
 <p align="center">
-    <img src="imgs/excel.png" width="75%" title="parameter"/> 
+    <img src="../imgs/excel.png" width="75%" title="parameter"/>
     <br/>
     <i>Parameters in Excel Workbook</i>
 </p>
